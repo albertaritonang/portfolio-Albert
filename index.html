@@ -1,283 +1,604 @@
+
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8fafc">
   <title>Albert Rapael Aritonang — Business Analyst & QA Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-  </style>
-</head>
-<body class="bg-[#090d16] text-slate-100 antialiased selection:bg-rose-500 selection:text-white">
 
-  <!-- Top Navigation Bar -->
-  <nav class="sticky top-0 z-50 bg-[#090d16]/85 backdrop-blur-md border-b border-slate-800/80">
-    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-rose-600 to-blue-600 flex items-center justify-center font-bold text-white text-sm">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS lokal -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="antialiased selection:bg-rose-200 selection:text-rose-900">
+
+  <!-- NAVIGATION -->
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200/80">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6 min-h-16 flex flex-wrap items-center justify-between gap-3 py-3">
+
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-rose-500 to-orange-400 flex items-center justify-center font-extrabold text-white shadow-lg shadow-rose-200">
           AA
         </div>
-        <span class="font-semibold text-sm tracking-wide text-slate-200">ALBERT.WORKSPACE</span>
-        <span class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Open to Opportunities
+
+        <span class="font-extrabold text-sm tracking-wide text-slate-800">
+          ALBERT.ARITONANG
         </span>
-      </div>
-      <div class="flex items-center gap-6 text-sm text-slate-400">
-        <a href="#featured" class="hover:text-white transition">Telkomsel Case Study</a>
-        <a href="#skills" class="hover:text-white transition">Skills</a>
-        <a href="#experience" class="hover:text-white transition">Experience</a>
-        <a href="#projects" class="hover:text-white transition">Projects</a>
-        <a href="mailto:rafaelart123@gmail.com" class="bg-slate-800 hover:bg-slate-700 text-white px-4 py-1.5 rounded-lg border border-slate-700 transition">
+
+        <span class="hidden md:inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-100">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          Business Analyst
+        </span>
+      </a>
+
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs sm:text-sm font-medium">
+        <a href="#cv" class="nav-link">CV</a>
+        <a href="#travel" class="nav-link">Perjalanan Dinas</a>
+        <a href="#tools" class="nav-link">Tools</a>
+        <a href="#featured" class="nav-link">Power BI</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="mailto:rafaelart123@gmail.com" class="bg-rose-600 hover:bg-rose-700 text-white px-4 py-2 rounded-xl transition shadow-md shadow-rose-200">
           Contact
         </a>
       </div>
+
     </div>
   </nav>
 
-  <main class="max-w-6xl mx-auto px-6 py-10 space-y-12">
+  <main class="max-w-6xl mx-auto px-5 sm:px-6 py-8 sm:py-12 space-y-8 sm:space-y-10">
 
-    <!-- Hero Section dengan Foto & Layout Menarik -->
-    <section class="grid lg:grid-cols-12 gap-8 items-center bg-[#111827] border border-slate-800 rounded-3xl p-8 sm:p-12 relative overflow-hidden">
-      <!-- Efek Background Glow -->
-      <div class="absolute top-0 right-0 w-96 h-96 bg-rose-600/10 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+    <!-- HERO -->
+    <section class="relative overflow-hidden rounded-[2rem] bg-white border border-slate-200 shadow-xl shadow-slate-200/60">
 
-      <!-- Kiri: Teks & Informasi -->
-      <div class="lg:col-span-7 space-y-6 relative z-10">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-500/10 text-rose-400 border border-rose-500/25 text-xs font-semibold">
-          <span>Business Analyst @ Telkomsel</span>
-          <span>•</span>
-          <span>Ex-QA @ BNI</span>
-        </div>
-        
-        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-          Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-400 to-blue-400">Albert Aritonang</span>
-        </h1>
-        
-        <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
-          Lulusan Sarjana Rekayasa Perangkat Lunak IT Del[cite: 4] yang berfokus pada <strong class="text-white">Business Analysis</strong>, <strong class="text-white">Data Visualization (Power BI)</strong>, dan <strong class="text-white">Quality Assurance</strong>. Menghubungkan kebutuhan bisnis dengan solusi teknis yang presisi.
-        </p>
+      <div class="absolute inset-0 soft-grid opacity-40 pointer-events-none"></div>
+      <div class="absolute -top-24 -right-20 w-96 h-96 bg-rose-100 rounded-full blur-3xl opacity-70"></div>
+      <div class="absolute -bottom-28 left-1/3 w-80 h-80 bg-orange-100 rounded-full blur-3xl opacity-60"></div>
 
-        <div class="flex flex-wrap items-center gap-4 pt-2">
-          <a href="https://www.linkedin.com/in/albertaritonang/" target="_blank" class="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm transition shadow-lg shadow-blue-600/25">
-            LinkedIn Profile
-          </a>
-          <a href="https://github.com/albertaritonang" target="_blank" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium text-sm border border-slate-700 transition">
-            GitHub Portfolio
-          </a>
-        </div>
-      </div>
+      <div class="relative grid lg:grid-cols-12 gap-10 items-center p-7 sm:p-10 lg:p-14">
 
-      <!-- Kanan: Bingkai Foto Profil yang Estetik -->
-      <div class="lg:col-span-5 flex justify-center relative z-10">
-        <div class="relative w-64 sm:w-72 h-80 sm:h-96 rounded-2xl overflow-hidden border-2 border-slate-700/80 bg-slate-900 shadow-2xl group">
-          <!-- Gambar Foto Profil -->
-          <img src="foto.png" alt="Albert Rapael Aritonang" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
-          
-          <!-- Gradien Overlay di Bawah Foto -->
-          <div class="absolute inset-0 bg-gradient-to-t from-[#090d16] via-transparent to-transparent opacity-80"></div>
-          
-          <!-- Label Nama Kecil di dalam Foto -->
-          <div class="absolute bottom-4 left-4 right-4 text-center">
-            <div class="text-xs font-semibold text-white tracking-wider bg-slate-900/80 backdrop-blur-md py-1.5 px-3 rounded-lg border border-slate-700">
-              Albert Rapael Aritonang
+        <div class="lg:col-span-7 space-y-6">
+
+          <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-rose-50 text-rose-700 border border-rose-100 text-xs font-bold tracking-wide">
+            <span class="w-2 h-2 rounded-full bg-rose-500"></span>
+            BUSINESS ANALYST @ TELKOMSEL
+            <span class="text-rose-300">•</span>
+            EX-QA @ BNI
+          </div>
+
+          <div>
+            <p class="text-slate-500 font-semibold mb-2">
+              Hello, welcome to my portfolio
+            </p>
+
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08] text-slate-900">
+              Hi, I'm
+              <span class="gradient-text">Albert Aritonang</span>
+            </h1>
+          </div>
+
+          <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl">
+            Lulusan Sarjana Rekayasa Perangkat Lunak IT Del dengan keahlian di bidang
+            <strong class="text-slate-800">Business Analysis</strong>,
+            <strong class="text-slate-800">Data Cleansing & Visualization</strong>, serta
+            <strong class="text-slate-800">Quality Assurance</strong>.
+            Berpengalaman mengelola analitik pelanggan dan menjembatani kebutuhan bisnis ke solusi digital.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-3 pt-1">
+            <a href="Albert_Rapael_Aritonang_CV.pdf" target="_blank"
+              class="px-5 py-3 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-semibold text-sm transition shadow-lg shadow-rose-200">
+              Download CV ↓
+            </a>
+
+            <a href="https://www.linkedin.com/in/albertaritonang/" target="_blank"
+              class="px-5 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-700 font-semibold text-sm border border-slate-200 transition">
+              LinkedIn Profile ↗
+            </a>
+          </div>
+
+          <div class="flex flex-wrap gap-6 pt-3 text-sm">
+            <div>
+              <div class="font-extrabold text-slate-900">Business Analysis</div>
+              <div class="text-slate-500 text-xs mt-1">Requirements & process</div>
+            </div>
+
+            <div>
+              <div class="font-extrabold text-slate-900">Data & Reporting</div>
+              <div class="text-slate-500 text-xs mt-1">Cleansing & visualization</div>
+            </div>
+
+            <div>
+              <div class="font-extrabold text-slate-900">Quality Assurance</div>
+              <div class="text-slate-500 text-xs mt-1">Testing & validation</div>
             </div>
           </div>
+
         </div>
+
+        <div class="lg:col-span-5 flex justify-center lg:justify-end">
+          <div class="relative w-64 sm:w-72">
+
+            <div class="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-rose-200 to-orange-100 rotate-3"></div>
+
+            <div class="relative h-80 sm:h-96 rounded-[1.7rem] overflow-hidden border-4 border-white shadow-2xl bg-slate-100">
+
+              <img src="foto.png"
+                alt="Foto profesional Albert Rapael Aritonang"
+                class="w-full h-full object-cover object-top">
+
+              <div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-slate-950/75 to-transparent">
+                <div class="text-white font-bold">Albert Rapael Aritonang</div>
+                <div class="text-rose-100 text-xs mt-1">
+                  Business Analyst · Quality Assurance
+                </div>
+              </div>
+
+            </div>
+
+            <div class="absolute -right-5 top-8 bg-white rounded-2xl px-4 py-3 shadow-lg border border-slate-100">
+              <div class="text-xs text-slate-500">Based in</div>
+              <div class="font-bold text-slate-800 text-sm">Indonesia 🇮🇩</div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- Featured Work: Telkomsel Case Study with Live Embedded Power BI Dashboard -->
-    <section id="featured" class="bg-[#111827] border border-slate-800 rounded-2xl overflow-hidden">
-      <div class="p-6 sm:p-8 border-b border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div>
-          <div class="flex items-center gap-2 text-rose-400 text-xs font-bold uppercase tracking-wider mb-1">
-            <span>Featured Enterprise Work</span> • <span>Telkomsel (2025–2026)</span>
-          </div>
-          <h2 class="text-2xl font-bold text-white">tNPS Customer Experience Dashboard (Indihome + Mobile)</h2>
-        </div>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1 rounded-full text-xs bg-slate-800 text-slate-300 border border-slate-700">Requirements Analysis</span>
-          <span class="px-3 py-1 rounded-full text-xs bg-slate-800 text-slate-300 border border-slate-700">Power BI Live Preview</span>
-        </div>
-      </div>
 
-      <div class="p-6 sm:p-8 space-y-6">
+    <!-- CV -->
+    <section id="cv" class="section-card p-6 sm:p-9">
+
+      <div class="grid lg:grid-cols-12 gap-7 items-center">
+
+        <div class="lg:col-span-4 space-y-4">
+          <div class="eyebrow">Curriculum Vitae</div>
+
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+            Professional Resume
+          </h2>
+
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Ringkasan rekam jejak karier, latar belakang pendidikan Sarjana IT Del,
+            serta portofolio kompetensi profesional dalam satu dokumen terpadu.
+          </p>
+
+          <div class="flex flex-wrap gap-2 pt-1">
+            <a href="Albert_Rapael_Aritonang_CV.pdf" target="_blank"
+              class="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold transition">
+              Buka layar penuh ↗
+            </a>
+
+            <a href="Albert_Rapael_Aritonang_CV.pdf" download
+              class="px-4 py-2.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 text-sm font-semibold transition">
+              Download PDF
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-8">
+          <div class="rounded-2xl overflow-hidden border border-slate-200 bg-slate-50 shadow-inner h-[320px] sm:h-[390px]">
+
+            <iframe src="Albert_Rapael_Aritonang_CV.pdf"
+              title="Pratinjau CV Albert Aritonang"
+              width="100%"
+              height="100%"
+              class="border-0">
+            </iframe>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PERJALANAN DINAS -->
+    <section id="travel" class="section-card p-6 sm:p-9 space-y-7">
+
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+
         <div>
-          <h3 class="text-sm font-semibold text-slate-200 uppercase tracking-wider mb-2">Tentang Proyek</h3>
-          <p class="text-sm text-slate-400 leading-relaxed">
-            Mengonsolidasikan data survei kepuasan pelanggan (<strong class="text-slate-200">Transactional Net Promoter Score / tNPS</strong>) lintas titik interaksi (<em class="text-slate-300">complaints, interactions, purchases</em>) pada segmen Indihome dan Mobile[cite: 4]. Di bawah ini adalah tampilan interaktif dari dashboard analitik yang dikembangkan:
+          <div class="eyebrow mb-2">Field Engagement & Business Trips</div>
+
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+            Perjalanan Dinas & Kunjungan Operasional
+          </h2>
+
+          <p class="text-sm text-slate-600 mt-3 max-w-3xl leading-relaxed">
+            Dokumentasi perjalanan dinas dan keterlibatan langsung di lapangan
+            untuk mendukung evaluasi Customer Experience serta koordinasi operasional regional.
           </p>
         </div>
 
-        <!-- LIVE POWER BI EMBED CONTAINER -->
-        <div class="rounded-xl overflow-hidden border border-slate-700 bg-slate-900 shadow-2xl">
-          <div class="bg-slate-800 px-4 py-2.5 flex items-center justify-between text-xs text-slate-400 border-b border-slate-700">
-            <span class="flex items-center gap-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
-              Live Interactive Power BI Report
+        <span class="shrink-0 px-4 py-2 rounded-full text-xs font-bold bg-rose-50 text-rose-700 border border-rose-100">
+          TELKOMSEL JOURNEY
+        </span>
+
+      </div>
+
+
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
+
+        <!-- FOTO BALIGE -->
+        <article class="travel-card rounded-2xl border border-slate-200 bg-white hover:shadow-xl transition group">
+
+          <div class="overflow-hidden relative">
+            <img class="travel-photo group-hover:scale-105"
+              src="balige.jpg"
+              alt="Dokumentasi perjalanan dinas Balige"
+              loading="lazy">
+
+            <span class="absolute top-4 left-4 bg-white/95 text-rose-700 text-xs font-bold px-3 py-1.5 rounded-full shadow">
+              SUMATERA UTARA
             </span>
-            <a href="https://app.powerbi.com/view?r=eyJrIjoiNjc3ODBiNzktZWZmZS00OTcwLWIyOWUtNzkzMTc2M2E2ZjFlIiwidCI6ImZjNzQzMDc1LTkzZWQtNGE1Yy04MmMwLWNhNWVhYzkxNDIyMCIsImMiOjEwfQ%3D%3D" target="_blank" class="text-blue-400 hover:underline">
-              Buka di Tab Baru ↗
-            </a>
           </div>
-          <div class="w-full h-[500px] sm:h-[600px]">
-            <iframe 
-              title="tNPS Dashboard Telkomsel" 
-              width="100%" 
-              height="100%" 
-              src="https://app.powerbi.com/view?r=eyJrIjoiNjc3ODBiNzktZWZmZS00OTcwLWIyOWUtNzkzMTc2M2E2ZjFlIiwidCI6ImZjNzQzMDc1LTkzZWQtNGE1Yy04MmMwLWNhNWVhYzkxNDIyMCIsImMiOjEwfQ%3D%3D" 
-              frameborder="0" 
-              allowFullScreen="true">
-            </iframe>
+
+          <div class="p-5">
+            <h3 class="text-lg font-extrabold text-slate-900">Balige</h3>
+
+            <p class="text-sm text-slate-600 leading-relaxed mt-2">
+              Dokumentasi perjalanan dinas dan kegiatan lapangan di Balige.
+            </p>
+
+            <div class="mt-4 flex items-center gap-2 text-xs font-semibold text-rose-700">
+              📍 Business trip · Balige
+            </div>
           </div>
-        </div>
+
+        </article>
+
+
+        <!-- FOTO SEMARANG -->
+        <article class="travel-card rounded-2xl border border-slate-200 bg-white hover:shadow-xl transition group">
+
+          <div class="overflow-hidden relative">
+            <img class="travel-photo group-hover:scale-105"
+              src="semarang.jpg"
+              alt="Dokumentasi perjalanan dinas Semarang"
+              loading="lazy">
+
+            <span class="absolute top-4 left-4 bg-white/95 text-rose-700 text-xs font-bold px-3 py-1.5 rounded-full shadow">
+              JAWA TENGAH
+            </span>
+          </div>
+
+          <div class="p-5">
+            <h3 class="text-lg font-extrabold text-slate-900">Semarang</h3>
+
+            <p class="text-sm text-slate-600 leading-relaxed mt-2">
+              Dokumentasi perjalanan dinas dan kegiatan lapangan di Semarang.
+            </p>
+
+            <div class="mt-4 flex items-center gap-2 text-xs font-semibold text-rose-700">
+              📍 Business trip · Semarang
+            </div>
+          </div>
+
+        </article>
+
+
+        <!-- FOTO MEDAN -->
+        <article class="travel-card rounded-2xl border border-slate-200 bg-white hover:shadow-xl transition group">
+
+          <div class="overflow-hidden relative">
+            <img class="travel-photo group-hover:scale-105"
+              src="medan.jpg"
+              alt="Dokumentasi perjalanan dinas Medan"
+              loading="lazy">
+
+            <span class="absolute top-4 left-4 bg-white/95 text-rose-700 text-xs font-bold px-3 py-1.5 rounded-full shadow">
+              SUMATERA UTARA
+            </span>
+          </div>
+
+          <div class="p-5">
+            <h3 class="text-lg font-extrabold text-slate-900">Medan</h3>
+
+            <p class="text-sm text-slate-600 leading-relaxed mt-2">
+              Dokumentasi perjalanan dinas dan kegiatan lapangan di Medan.
+            </p>
+
+            <div class="mt-4 flex items-center gap-2 text-xs font-semibold text-rose-700">
+              📍 Business trip · Medan
+            </div>
+          </div>
+
+        </article>
+
       </div>
+
+     
+
     </section>
 
-    <!-- Skills Matrix Section -->
-    <section id="skills" class="bg-[#111827] border border-slate-800 rounded-2xl p-6 sm:p-8">
-      <h2 class="text-lg font-bold text-white mb-6 flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-blue-500"></span> Professional Skills & Competencies
+
+    <!-- FEATURED TOOL -->
+    <section id="tools" class="section-card p-6 sm:p-9">
+
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+
+        <div>
+          <div class="eyebrow mb-2">Featured Tool</div>
+
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+            Rekap & Data Cleansing Tool (tNPS)
+          </h2>
+        </div>
+
+        <a href="https://rekapin-nps.vercel.app/"
+          target="_blank"
+          class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-sm font-bold transition shadow-lg shadow-rose-200">
+          Buka Live Tool ↗
+        </a>
+
+      </div>
+
+      <p class="text-sm text-slate-600 leading-relaxed mt-4 max-w-4xl">
+        Aplikasi web mandiri yang dikembangkan untuk mengotomatisasi proses
+        pembersihan data (data cleansing) dan rekapitulasi survei kepuasan
+        pelanggan tNPS secara efisien dan akurat.
+      </p>
+
+      <div class="flex flex-wrap gap-2 mt-5">
+        <span class="tag text-xs font-semibold px-3 py-1.5 rounded-lg">Data Processing</span>
+        <span class="tag text-xs font-semibold px-3 py-1.5 rounded-lg">Data Cleansing</span>
+        <span class="tag text-xs font-semibold px-3 py-1.5 rounded-lg">Web App</span>
+      </div>
+
+    </section>
+
+
+<!-- POWER BI DASHBOARD GALLERY -->
+<section id="featured" class="section-card overflow-hidden">
+
+  <!-- HEADER -->
+  <div class="p-6 sm:p-9 border-b border-slate-100">
+
+    <div class="eyebrow mb-2">
+      Featured Analytics Portfolio
+    </div>
+
+    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+      Power BI Dashboard Portfolio
+    </h2>
+
+    <p class="text-sm text-slate-600 mt-3 max-w-4xl leading-relaxed">
+      Dashboard Customer Experience, tNPS Analytics, Operational Monitoring,
+      dan Business Reporting yang digunakan untuk mendukung pengambilan
+      keputusan berbasis data.
+    </p>
+
+  </div>
+
+  <!-- OVERVIEW -->
+  <div class="grid md:grid-cols-4 gap-4 p-6 sm:p-9 bg-slate-50 border-b border-slate-100">
+
+    <div class="bg-white p-5 rounded-2xl border border-slate-200">
+      <div class="text-xs text-slate-500 uppercase">Role</div>
+      <div class="font-bold mt-2">Business Analyst</div>
+    </div>
+
+    <div class="bg-white p-5 rounded-2xl border border-slate-200">
+      <div class="text-xs text-slate-500 uppercase">Tools</div>
+      <div class="font-bold mt-2">Power BI</div>
+    </div>
+
+    <div class="bg-white p-5 rounded-2xl border border-slate-200">
+      <div class="text-xs text-slate-500 uppercase">Domain</div>
+      <div class="font-bold mt-2">Customer Experience</div>
+    </div>
+
+    <div class="bg-white p-5 rounded-2xl border border-slate-200">
+      <div class="text-xs text-slate-500 uppercase">Focus</div>
+      <div class="font-bold mt-2">tNPS Analytics</div>
+    </div>
+
+  </div>
+
+  <!-- DASHBOARD LIST -->
+  <div class="p-6 sm:p-9">
+
+    <div class="space-y-10">
+
+      <!-- DASHBOARD 1 -->
+      <article class="rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-white">
+
+        <div class="p-5 border-b border-slate-100">
+
+          <div class="flex flex-wrap gap-2 mb-3">
+
+            <span class="px-3 py-1 rounded-full bg-rose-50 text-rose-700 text-xs font-bold">
+              CUSTOMER EXPERIENCE
+            </span>
+
+            <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold">
+              PUBLIC REPORT
+            </span>
+
+          </div>
+
+          <h3 class="text-xl font-extrabold text-slate-900">
+            tNPS Customer Experience Dashboard
+          </h3>
+
+          <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+            Dashboard monitoring Transactional Net Promoter Score (tNPS)
+            untuk layanan Mobile dan IndiHome. Menampilkan trend customer
+            sentiment, complaint experience, purchase experience, serta
+            interaction touchpoint.
+          </p>
+
+        </div>
+
+        <div class="bg-slate-100 px-5 py-3 border-b border-slate-200 flex justify-between items-center">
+
+          <span class="text-xs font-bold text-slate-700">
+            Live Interactive Dashboard
+          </span>
+
+          <a
+            target="_blank"
+            href="https://app.powerbi.com/view?r=eyJrIjoiNjc3ODBiNzktZWZmZS00OTcwLWIyOWUtNzkzMTc2M2E2ZjFlIiwidCI6ImZjNzQzMDc1LTkzZWQtNGE1Yy04MmMwLWNhNWVhYzkxNDIyMCIsImMiOjEwfQ%3D%3D"
+            class="text-rose-700 font-semibold hover:underline">
+            Open Report ↗
+          </a>
+
+        </div>
+
+        <iframe
+          title="tNPS Dashboard"
+          width="100%"
+          height="700"
+          src="https://app.powerbi.com/view?r=eyJrIjoiNjc3ODBiNzktZWZmZS00OTcwLWIyOWUtNzkzMTc2M2E2ZjFlIiwidCI6ImZjNzQzMDc1LTkzZWQtNGE1Yy04MmMwLWNhNWVhYzkxNDIyMCIsImMiOjEwfQ%3D%3D"
+          frameborder="0"
+          allowfullscreen="true">
+        </iframe>
+
+      </article>
+
+
+      <!-- DASHBOARD 2 -->
+      <article class="rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-white">
+
+        <div class="p-5 border-b border-slate-100">
+
+          <div class="flex flex-wrap gap-2 mb-3">
+
+            <span class="px-3 py-1 rounded-full bg-sky-50 text-sky-700 text-xs font-bold">
+              CUSTOMER EXPERIENCE
+            </span>
+
+            <span class="px-3 py-1 rounded-full bg-amber-50 text-amber-700 text-xs font-bold">
+              INTERNAL REPORT
+            </span>
+
+          </div>
+
+          <h3 class="text-xl font-extrabold text-slate-900">
+            Customer Experience Operational Dashboard
+          </h3>
+
+          <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+            Dashboard operasional untuk monitoring performa customer
+            experience, tracking KPI regional, analisis issue pelanggan,
+            customer satisfaction, dan reporting bisnis secara real-time.
+          </p>
+
+        </div>
+
+        <div class="bg-slate-100 px-5 py-3 border-b border-slate-200 flex justify-between items-center">
+
+          <span class="text-xs font-bold text-slate-700">
+            Internal Power BI Report
+          </span>
+
+          <a
+            target="_blank"
+            href="https://app.powerbi.com/reportEmbed?reportId=2c0bd7ee-7052-4ba0-bb9b-47b1ab97e83e&autoAuth=true&ctid=fc743075-93ed-4a5c-82c0-ca5eac914220"
+            class="text-sky-700 font-semibold hover:underline">
+            Open Report ↗
+          </a>
+
+        </div>
+
+        <iframe
+          title="Customer Experience Dashboard"
+          width="100%"
+          height="700"
+          src="https://app.powerbi.com/reportEmbed?reportId=2c0bd7ee-7052-4ba0-bb9b-47b1ab97e83e&autoAuth=true&ctid=fc743075-93ed-4a5c-82c0-ca5eac914220"
+          frameborder="0"
+          allowfullscreen="true">
+        </iframe>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+    <!-- SKILLS -->
+    <section id="skills" class="section-card p-6 sm:p-9">
+
+      <div class="eyebrow mb-2">What I bring</div>
+
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-7">
+        Professional Skills & Competencies
       </h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-slate-900/60 p-5 rounded-xl border border-slate-800">
-          <div class="text-rose-400 text-xs font-semibold uppercase tracking-wider mb-3">Business Analysis</div>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-md">Requirements Gathering</span>
-            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-md">BRD Documentation</span>
-            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-md">Use Cases</span>
-            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-md">Process Flow Mapping</span>
-            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-md">Gap Analysis</span>
-            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-md">Stakeholder Communication</span>
-            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-md">Process Improvement</span>
-            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-md">Power BI Dashboards</span>
-            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-md">KPI Reporting</span>
+
+      <div class="grid md:grid-cols-3 gap-5">
+
+        <div class="rounded-2xl bg-rose-50/70 border border-rose-100 p-5">
+          <div class="text-rose-700 text-xs font-extrabold uppercase tracking-wider mb-4">
+            Business Analysis
+          </div>
+
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag">Requirements Gathering</span>
+            <span class="skill-tag">BRD Documentation</span>
+            <span class="skill-tag">Use Cases</span>
+            <span class="skill-tag">Process Flow Mapping</span>
+            <span class="skill-tag">Data Cleansing</span>
+            <span class="skill-tag">Power BI Dashboards</span>
+            <span class="skill-tag">KPI Reporting</span>
           </div>
         </div>
 
-        <div class="bg-slate-900/60 p-5 rounded-xl border border-slate-800">
-          <div class="text-blue-400 text-xs font-semibold uppercase tracking-wider mb-3">Quality Assurance</div>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-md">Test Case Design</span>
-            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-md">Bug Reporting</span>
-            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-md">TestRail</span>
-            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-md">Katalon Studio</span>
-            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-md">Cucumber BDD</span>
-            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-md">Robot Framework</span>
+
+        <div class="rounded-2xl bg-sky-50/70 border border-sky-100 p-5">
+          <div class="text-sky-700 text-xs font-extrabold uppercase tracking-wider mb-4">
+            Quality Assurance
+          </div>
+
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag">Test Case Design</span>
+            <span class="skill-tag">Bug Reporting</span>
+            <span class="skill-tag">TestRail</span>
+            <span class="skill-tag">Katalon Studio</span>
+            <span class="skill-tag">Cucumber BDD</span>
           </div>
         </div>
 
-        <div class="bg-slate-900/60 p-5 rounded-xl border border-slate-800">
-          <div class="text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-3">Technical & Engineering</div>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-md">PHP & Laravel 8</span>
-            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-md">REST APIs</span>
-            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-md">K-Nearest Neighbors (KNN)</span>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Work Experience & Leadership Timeline -->
-    <section id="experience" class="grid md:grid-cols-2 gap-6">
-      <div class="bg-[#111827] border border-slate-800 rounded-2xl p-6 sm:p-8">
-        <h2 class="text-lg font-bold text-white mb-6 flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-rose-500"></span> Work Experience
-        </h2>
-        <div class="space-y-6 border-l border-slate-800 ml-2 pl-6">
-          <div class="relative">
-            <span class="w-3 h-3 rounded-full bg-rose-500 absolute -left-[30px] top-1.5 ring-4 ring-[#111827]"></span>
-            <div class="text-xs text-rose-400 font-semibold">Oct 2025 – Present</div>
-            <h3 class="text-base font-bold text-white">Business Analyst</h3>
-            <div class="text-sm text-slate-400 mb-2">PT Telekomunikasi Selular — Jakarta</div>
-            <p class="text-xs text-slate-400 leading-relaxed">
-              Mengelola analisis kebutuhan bisnis, dokumentasi <em>use case</em> & <em>process flow</em>, identifikasi peluang efisiensi proses, serta pelaporan analitik untuk manajemen[cite: 4].
-            </p>
+        <div class="rounded-2xl bg-amber-50/70 border border-amber-100 p-5">
+          <div class="text-amber-700 text-xs font-extrabold uppercase tracking-wider mb-4">
+            Technical & Engineering
           </div>
 
-          <div class="relative">
-            <span class="w-3 h-3 rounded-full bg-blue-500 absolute -left-[30px] top-1.5 ring-4 ring-[#111827]"></span>
-            <div class="text-xs text-blue-400 font-semibold">Jun 2024 – Sep 2024</div>
-            <h3 class="text-base font-bold text-white">Quality Assurance Intern</h3>
-            <div class="text-sm text-slate-400 mb-2">PT Bank Negara Indonesia (Persero) Tbk — Jakarta</div>
-            <p class="text-xs text-slate-400 leading-relaxed">
-              Menyusun <em>test cases</em> & skenario pengujian, melakukan eksekusi testing fitur produk perbankan, mengidentifikasi <em>bug</em>, dan berkolaborasi dengan tim pengembang[cite: 4].
-            </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag">PHP & Laravel 8</span>
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">Web App Tools</span>
           </div>
         </div>
+
       </div>
 
-      <div class="bg-[#111827] border border-slate-800 rounded-2xl p-6 sm:p-8">
-        <h2 class="text-lg font-bold text-white mb-6 flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-blue-500"></span> Organizational Leadership
-        </h2>
-        <div class="space-y-6 border-l border-slate-800 ml-2 pl-6">
-          <div class="relative">
-            <span class="w-3 h-3 rounded-full bg-indigo-500 absolute -left-[30px] top-1.5 ring-4 ring-[#111827]"></span>
-            <div class="text-xs text-indigo-400 font-semibold">Jan 2024 – Sep 2024</div>
-            <h3 class="text-base font-bold text-white">Head of Creative Media Team</h3>
-            <div class="text-sm text-slate-400 mb-2">Google Developer Student Club (GDSC)</div>
-            <p class="text-xs text-slate-400 leading-relaxed">
-              Memimpin produksi aset visual dan grafis untuk meningkatkan kehadiran digital komunitas serta mempromosikan berbagai inisiatif teknologi[cite: 4].
-            </p>
-          </div>
-
-          <div class="relative">
-            <span class="w-3 h-3 rounded-full bg-slate-600 absolute -left-[30px] top-1.5 ring-4 ring-[#111827]"></span>
-            <div class="text-xs text-slate-400 font-semibold">Jun 2023 – Sep 2023</div>
-            <h3 class="text-base font-bold text-white">Head of Division (DEPKOMINFO)</h3>
-            <div class="text-sm text-slate-400 mb-2">Badan Eksekutif Mahasiswa — IT Del</div>
-            <p class="text-xs text-slate-400 leading-relaxed">
-              Mengelola pusat informasi organisasi dan menjembatani komunikasi antar-departemen melalui media komunikasi digital[cite: 4].
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Other Technical & QA Projects -->
-    <section id="projects">
-      <h2 class="text-lg font-bold text-white mb-5 flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Software Testing & Engineering Projects
-      </h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="bg-[#111827] border border-slate-800 hover:border-slate-700 rounded-xl p-5 transition">
-          <div class="text-xs text-blue-400 font-medium mb-1">QA Automation</div>
-          <h3 class="text-sm font-bold text-white mb-2">Campus Info System Testing</h3>
-          <p class="text-xs text-slate-400 mb-4">Pengujian 20 fungsi kritikal website kampus menggunakan TestRail dan Katalon[cite: 4].</p>
-          <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-300">Katalon • TestRail</span>
-        </div>
-
-        <div class="bg-[#111827] border border-slate-800 hover:border-slate-700 rounded-xl p-5 transition">
-          <div class="text-xs text-blue-400 font-medium mb-1">BDD Testing</div>
-          <h3 class="text-sm font-bold text-white mb-2">AMUBA Web App Testing</h3>
-          <p class="text-xs text-slate-400 mb-4">Menyusun dan merangkum 1.000+ test cases untuk memastikan konsistensi sistem[cite: 4].</p>
-          <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-300">Cucumber • Robot</span>
-        </div>
-
-        <div class="bg-[#111827] border border-slate-800 hover:border-slate-700 rounded-xl p-5 transition">
-          <div class="text-xs text-emerald-400 font-medium mb-1">Machine Learning</div>
-          <h3 class="text-sm font-bold text-white mb-2">Heart Attack Prediction</h3>
-          <p class="text-xs text-slate-400 mb-4">Implementasi dan evaluasi algoritma K-Nearest Neighbors (KNN) pada dataset medis[cite: 4].</p>
-          <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-300">KNN • Data Analysis</span>
-        </div>
-
-        <div class="bg-[#111827] border border-slate-800 hover:border-slate-700 rounded-xl p-5 transition">
-          <div class="text-xs text-purple-400 font-medium mb-1">Back-End Dev</div>
-          <h3 class="text-sm font-bold text-white mb-2">Gaol Production EO</h3>
-          <p class="text-xs text-slate-400 mb-4">Pengembangan fungsi back-end dan integrasi API menggunakan PHP dan Laravel 8[cite: 4].</p>
-          <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-300">Laravel 8 • API</span>
-        </div>
-      </div>
     </section>
 
   </main>
 
-  <footer class="border-t border-slate-800/80 py-8 text-center text-xs text-slate-500">
-    <p>© 2026 Albert Rapael Aritonang • rafaelart123@gmail.com</p>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-200 bg-white py-8 text-center">
+    <p class="text-xs text-slate-500">
+      © 2026 Albert Rapael Aritonang
+      <span class="mx-1 text-rose-400">•</span>
+      <a href="mailto:rafaelart123@gmail.com" class="hover:text-rose-700">
+        rafaelart123@gmail.com
+      </a>
+    </p>
   </footer>
 
 </body>

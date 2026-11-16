@@ -1,0 +1,14 @@
+:root { --brand: #e11d48; --ink: #172033; --muted: #64748b; }
+    * { scroll-margin-top: 90px; }
+    body { font-family: 'Inter', sans-serif; background: #f8fafc; color: var(--ink); }
+    .section-card { background: rgba(255,255,255,.92); border: 1px solid #e8edf4; border-radius: 1.5rem; box-shadow: 0 12px 35px rgba(15,23,42,.045); }
+    .eyebrow { color: #e11d48; font-size: .72rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    .soft-grid { background-image: radial-gradient(#cbd5e1 0.7px, transparent .7px); background-size: 18px 18px; }
+    .travel-photo { height: 220px; width: 100%; object-fit: cover; transition: transform .5s ease; }
+    .travel-card:hover .travel-photo { transform: scale(1.045); }
+    .travel-card { overflow: hidden; }
+    .nav-link { color: #64748b; transition: color .2s; }
+    .nav-link:hover { color: #e11d48; }
+    .tag { background:#fff1f2; color:#be123c; border:1px solid #ffe4e6; }
+    .gradient-text { background:linear-gradient(100deg,#e11d48,#f97316); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    @media (max-width: 640px) { .travel-photo { height: 190px; } }
