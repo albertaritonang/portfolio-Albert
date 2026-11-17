@@ -77,18 +77,19 @@
       <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs sm:text-sm font-medium">
         <a href="#cv" class="nav-link">CV</a>
         <a href="#travel" class="nav-link">Perjalanan Dinas</a>
-        <a href="#tools" class="nav-link">Tools</a>
+        <a href="#autopivot" class="nav-link">Auto-Pivot tNPS</a>
+        <a href="#tools" class="nav-link">Cleansing Tool</a>
         <a href="#featured" class="nav-link">Power BI</a>
         <a href="#skills" class="nav-link">Skills & Tools</a>
 
         <!-- TOMBOL DARK / LIGHT MODE -->
         <button id="theme-toggle" type="button" aria-label="Toggle Dark Mode"
           class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 transition">
-          <!-- Icon Matahari (Muncul saat Dark Mode aktif) -->
+          <!-- Icon Matahari -->
           <svg id="theme-toggle-light-icon" class="hidden w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
             <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
           </svg>
-          <!-- Icon Bulan (Muncul saat Light Mode aktif) -->
+          <!-- Icon Bulan -->
           <svg id="theme-toggle-dark-icon" class="hidden w-4 h-4 text-slate-700" fill="currentColor" viewBox="0 0 20 20">
             <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
           </svg>
@@ -106,15 +107,12 @@
 
     <!-- HERO -->
     <section class="relative overflow-hidden rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/60 dark:shadow-none transition-colors duration-300">
-
       <div class="absolute inset-0 soft-grid opacity-40 dark:opacity-10 pointer-events-none"></div>
       <div class="absolute -top-24 -right-20 w-96 h-96 bg-rose-100 dark:bg-rose-900/20 rounded-full blur-3xl opacity-70"></div>
       <div class="absolute -bottom-28 left-1/3 w-80 h-80 bg-orange-100 dark:bg-orange-900/20 rounded-full blur-3xl opacity-60"></div>
 
       <div class="relative grid lg:grid-cols-12 gap-10 items-center p-7 sm:p-10 lg:p-14">
-
         <div class="lg:col-span-7 space-y-6">
-
           <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-rose-50 text-rose-700 border border-rose-100 dark:bg-rose-950/60 dark:text-rose-300 dark:border-rose-800/60 text-xs font-bold tracking-wide">
             <span class="w-2 h-2 rounded-full bg-rose-500"></span>
             BUSINESS ANALYST @ TELKOMSEL
@@ -123,13 +121,9 @@
           </div>
 
           <div>
-            <p class="text-slate-500 dark:text-slate-400 font-semibold mb-2">
-              Hello, welcome to my portfolio
-            </p>
-
+            <p class="text-slate-500 dark:text-slate-400 font-semibold mb-2">Hello, welcome to my portfolio</p>
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08] text-slate-900 dark:text-white">
-              Hi, I'm
-              <span class="gradient-text">Albert Rapael Aritonang</span>
+              Hi, I'm <span class="gradient-text">Albert Rapael Aritonang</span>
             </h1>
           </div>
 
@@ -146,87 +140,47 @@
               class="px-5 py-3 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-semibold text-sm transition shadow-lg shadow-rose-200 dark:shadow-rose-950/50">
               Download CV ↓
             </a>
-
             <a href="https://www.linkedin.com/in/albertaritonang/" target="_blank"
               class="px-5 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-200 dark:border-slate-700 font-semibold text-sm transition">
               LinkedIn Profile ↗
             </a>
           </div>
-
-          <div class="flex flex-wrap gap-6 pt-3 text-sm">
-            <div>
-              <div class="font-extrabold text-slate-900 dark:text-white">Business Analysis</div>
-              <div class="text-slate-500 dark:text-slate-400 text-xs mt-1">Requirements & process</div>
-            </div>
-
-            <div>
-              <div class="font-extrabold text-slate-900 dark:text-white">Data & Reporting</div>
-              <div class="text-slate-500 dark:text-slate-400 text-xs mt-1">Excel, Power BI & Anaconda</div>
-            </div>
-
-            <div>
-              <div class="font-extrabold text-slate-900 dark:text-white">Quality Assurance</div>
-              <div class="text-slate-500 dark:text-slate-400 text-xs mt-1">Testing & validation</div>
-            </div>
-          </div>
-
         </div>
 
         <div class="lg:col-span-5 flex justify-center lg:justify-end">
           <div class="relative w-64 sm:w-72">
-
             <div class="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-rose-200 to-orange-100 dark:from-rose-900/40 dark:to-orange-900/30 rotate-3"></div>
-
             <div class="relative h-80 sm:h-96 rounded-[1.7rem] overflow-hidden border-4 border-white dark:border-slate-800 shadow-2xl bg-slate-100 dark:bg-slate-800">
-
-              <img src="foto.png"
-                alt="Foto profesional Albert Rapael Aritonang"
-                class="w-full h-full object-cover object-top">
-
+              <img src="foto.png" alt="Foto profesional Albert Rapael Aritonang" class="w-full h-full object-cover object-top">
               <div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-slate-950/80 to-transparent">
                 <div class="text-white font-bold">Albert Rapael Aritonang</div>
-                <div class="text-rose-100 text-xs mt-1">
-                  Business Analyst · Quality Assurance
-                </div>
+                <div class="text-rose-100 text-xs mt-1">Business Analyst · Quality Assurance</div>
               </div>
-
             </div>
-
             <div class="absolute -right-5 top-8 bg-white dark:bg-slate-800 rounded-2xl px-4 py-3 shadow-lg border border-slate-100 dark:border-slate-700">
               <div class="text-xs text-slate-500 dark:text-slate-400">Based in</div>
               <div class="font-bold text-slate-800 dark:text-slate-100 text-sm">Indonesia 🇮🇩</div>
             </div>
-
           </div>
         </div>
-
       </div>
     </section>
 
 
     <!-- CV -->
     <section id="cv" class="section-card p-6 sm:p-9 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-colors duration-300">
-
       <div class="grid lg:grid-cols-12 gap-7 items-center">
-
         <div class="lg:col-span-4 space-y-4">
           <div class="eyebrow">Curriculum Vitae</div>
-
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
-            Professional Resume
-          </h2>
-
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">Professional Resume</h2>
           <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-            Ringkasan rekam jejak karier, latar belakang pendidikan Sarjana IT Del,
-            serta portofolio kompetensi profesional dalam satu dokumen terpadu.
+            Ringkasan rekam jejak karier, latar belakang pendidikan Sarjana IT Del, serta portofolio kompetensi profesional dalam satu dokumen terpadu.
           </p>
-
           <div class="flex flex-wrap gap-2 pt-1">
             <a href="Albert_Rapael_Aritonang_CV.pdf" target="_blank"
               class="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700 text-white text-sm font-semibold transition">
               Buka layar penuh ↗
             </a>
-
             <a href="Albert_Rapael_Aritonang_CV.pdf" download
               class="px-4 py-2.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 dark:bg-rose-950/60 dark:hover:bg-rose-900/60 dark:text-rose-300 text-sm font-semibold transition">
               Download PDF
@@ -236,164 +190,130 @@
 
         <div class="lg:col-span-8">
           <div class="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 shadow-inner h-[320px] sm:h-[390px]">
-
-            <iframe src="Albert_Rapael_Aritonang_CV.pdf"
-              title="Pratinjau CV Albert Aritonang"
-              width="100%"
-              height="100%"
-              class="border-0">
-            </iframe>
-
+            <iframe src="Albert_Rapael_Aritonang_CV.pdf" title="Pratinjau CV Albert Aritonang" width="100%" height="100%" class="border-0"></iframe>
           </div>
         </div>
-
       </div>
     </section>
 
 
     <!-- PERJALANAN DINAS -->
     <section id="travel" class="section-card p-6 sm:p-9 space-y-7 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-colors duration-300">
-
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-
         <div>
           <div class="eyebrow mb-2">Field Engagement & Business Trips</div>
-
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
-            Perjalanan Dinas & Kunjungan Operasional
-          </h2>
-
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">Perjalanan Dinas & Kunjungan Operasional</h2>
           <p class="text-sm text-slate-600 dark:text-slate-300 mt-3 max-w-3xl leading-relaxed">
-            Dokumentasi perjalanan dinas dan keterlibatan langsung di lapangan
-            untuk mendukung evaluasi Customer Experience serta koordinasi operasional regional.
+            Dokumentasi perjalanan dinas dan keterlibatan langsung di lapangan untuk mendukung evaluasi Customer Experience serta koordinasi operasional regional.
           </p>
         </div>
-
         <span class="shrink-0 px-4 py-2 rounded-full text-xs font-bold bg-rose-50 text-rose-700 border border-rose-100 dark:bg-rose-950/60 dark:text-rose-300 dark:border-rose-800/60">
           TELKOMSEL JOURNEY
         </span>
-
       </div>
-
 
       <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
-
-        <!-- FOTO BALIGE -->
         <article class="travel-card rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/60 hover:shadow-xl transition group">
-
           <div class="overflow-hidden relative rounded-t-2xl">
-            <img class="travel-photo group-hover:scale-105 transition-transform duration-300"
-              src="balige.jpg"
-              alt="Dokumentasi perjalanan dinas Balige"
-              loading="lazy">
-
-            <span class="absolute top-4 left-4 bg-white/95 dark:bg-slate-900/90 text-rose-700 dark:text-rose-400 text-xs font-bold px-3 py-1.5 rounded-full shadow">
-              SUMATERA UTARA
-            </span>
+            <img class="travel-photo group-hover:scale-105 transition-transform duration-300" src="balige.jpg" alt="Dokumentasi perjalanan dinas Balige" loading="lazy">
+            <span class="absolute top-4 left-4 bg-white/95 dark:bg-slate-900/90 text-rose-700 dark:text-rose-400 text-xs font-bold px-3 py-1.5 rounded-full shadow">SUMATERA UTARA</span>
           </div>
-
           <div class="p-5">
             <h3 class="text-lg font-extrabold text-slate-900 dark:text-white">Balige</h3>
-
-            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mt-2">
-              Dokumentasi perjalanan dinas dan kegiatan lapangan di Balige.
-            </p>
-
-            <div class="mt-4 flex items-center gap-2 text-xs font-semibold text-rose-700 dark:text-rose-400">
-              📍 Business trip · Balige
-            </div>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mt-2">Dokumentasi perjalanan dinas dan kegiatan lapangan di Balige.</p>
+            <div class="mt-4 flex items-center gap-2 text-xs font-semibold text-rose-700 dark:text-rose-400">📍 Business trip · Balige</div>
           </div>
-
         </article>
 
-
-        <!-- FOTO SEMARANG -->
         <article class="travel-card rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/60 hover:shadow-xl transition group">
-
           <div class="overflow-hidden relative rounded-t-2xl">
-            <img class="travel-photo group-hover:scale-105 transition-transform duration-300"
-              src="semarang.jpg"
-              alt="Dokumentasi perjalanan dinas Semarang"
-              loading="lazy">
-
-            <span class="absolute top-4 left-4 bg-white/95 dark:bg-slate-900/90 text-rose-700 dark:text-rose-400 text-xs font-bold px-3 py-1.5 rounded-full shadow">
-              JAWA TENGAH
-            </span>
+            <img class="travel-photo group-hover:scale-105 transition-transform duration-300" src="semarang.jpg" alt="Dokumentasi perjalanan dinas Semarang" loading="lazy">
+            <span class="absolute top-4 left-4 bg-white/95 dark:bg-slate-900/90 text-rose-700 dark:text-rose-400 text-xs font-bold px-3 py-1.5 rounded-full shadow">JAWA TENGAH</span>
           </div>
-
           <div class="p-5">
             <h3 class="text-lg font-extrabold text-slate-900 dark:text-white">Semarang</h3>
-
-            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mt-2">
-              Dokumentasi perjalanan dinas dan kegiatan lapangan di Semarang.
-            </p>
-
-            <div class="mt-4 flex items-center gap-2 text-xs font-semibold text-rose-700 dark:text-rose-400">
-              📍 Business trip · Semarang
-            </div>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mt-2">Dokumentasi perjalanan dinas dan kegiatan lapangan di Semarang.</p>
+            <div class="mt-4 flex items-center gap-2 text-xs font-semibold text-rose-700 dark:text-rose-400">📍 Business trip · Semarang</div>
           </div>
-
         </article>
 
-
-        <!-- FOTO MEDAN -->
         <article class="travel-card rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/60 hover:shadow-xl transition group">
-
           <div class="overflow-hidden relative rounded-t-2xl">
-            <img class="travel-photo group-hover:scale-105 transition-transform duration-300"
-              src="medan.jpg"
-              alt="Dokumentasi perjalanan dinas Medan"
-              loading="lazy">
-
-            <span class="absolute top-4 left-4 bg-white/95 dark:bg-slate-900/90 text-rose-700 dark:text-rose-400 text-xs font-bold px-3 py-1.5 rounded-full shadow">
-              SUMATERA UTARA
-            </span>
+            <img class="travel-photo group-hover:scale-105 transition-transform duration-300" src="medan.jpg" alt="Dokumentasi perjalanan dinas Medan" loading="lazy">
+            <span class="absolute top-4 left-4 bg-white/95 dark:bg-slate-900/90 text-rose-700 dark:text-rose-400 text-xs font-bold px-3 py-1.5 rounded-full shadow">SUMATERA UTARA</span>
           </div>
-
           <div class="p-5">
             <h3 class="text-lg font-extrabold text-slate-900 dark:text-white">Medan</h3>
-
-            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mt-2">
-              Dokumentasi perjalanan dinas dan kegiatan lapangan di Medan.
-            </p>
-
-            <div class="mt-4 flex items-center gap-2 text-xs font-semibold text-rose-700 dark:text-rose-400">
-              📍 Business trip · Medan
-            </div>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mt-2">Dokumentasi perjalanan dinas dan kegiatan lapangan di Medan.</p>
+            <div class="mt-4 flex items-center gap-2 text-xs font-semibold text-rose-700 dark:text-rose-400">📍 Business trip · Medan</div>
           </div>
-
         </article>
-
       </div>
-
     </section>
 
 
-    <!-- FEATURED TOOL -->
-    <section id="tools" class="section-card p-6 sm:p-9 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-colors duration-300">
-
+    <!-- NEW SECTION: tNPS AUTO-PIVOT DASHBOARD -->
+    <section id="autopivot" class="section-card p-6 sm:p-9 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-colors duration-300">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-
         <div>
-          <div class="eyebrow mb-2">Featured Tool</div>
+          <div class="eyebrow mb-2">Automated Data Application</div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+            tNPS Auto-Pivot Calculator (Mobile & IndiHome)
+          </h2>
+        </div>
+        <a href="https://tnps-autopivot.vercel.app/"
+          target="_blank"
+          class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-sm font-bold transition shadow-lg shadow-rose-200 dark:shadow-rose-950/50">
+          Buka Live Tool ↗
+        </a>
+      </div>
 
+      <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mt-4 max-w-4xl">
+        Dashboard kalkulator dan rekapitulasi otomatis untuk perhitungan <strong class="text-slate-800 dark:text-white">Transactional Net Promoter Score (tNPS)</strong> segmen Mobile dan IndiHome. Dirancang untuk mempercepat proses kalkulasi metrik kepuasan pelanggan secara instan dan akurat.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-6">
+        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 space-y-2">
+          <div class="font-bold text-slate-900 dark:text-white text-sm">💡 Fitur Utama & Kegunaan</div>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+            Otomatisasi rekap data survei, eliminasi perhitungan manual, serta penyajian hasil kalkulasi skor tNPS berdasarkan berbagai kategori dan periode waktu.
+          </p>
+        </div>
+        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 space-y-2">
+          <div class="font-bold text-slate-900 dark:text-white text-sm">📊 Cakupan Layanan</div>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+            Mendukung pengolahan data untuk lini layanan utama Telkomsel meliputi segmen Mobile dan IndiHome secara terstruktur.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-2 mt-5">
+        <span class="tag text-xs font-semibold px-3 py-1.5 rounded-lg">Auto-Pivot</span>
+        <span class="tag text-xs font-semibold px-3 py-1.5 rounded-lg">tNPS Calculation</span>
+        <span class="tag text-xs font-semibold px-3 py-1.5 rounded-lg">Mobile & IndiHome</span>
+        <span class="tag text-xs font-semibold px-3 py-1.5 rounded-lg">Web Utility</span>
+      </div>
+    </section>
+
+
+    <!-- FEATURED TOOL (CLEANSING TOOL) -->
+    <section id="tools" class="section-card p-6 sm:p-9 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-colors duration-300">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <div class="eyebrow mb-2">Data Utility Tool</div>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
             Rekap & Data Cleansing Tool (tNPS)
           </h2>
         </div>
-
         <a href="https://rekapin-nps.vercel.app/"
           target="_blank"
           class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-sm font-bold transition shadow-lg shadow-rose-200 dark:shadow-rose-950/50">
           Buka Live Tool ↗
         </a>
-
       </div>
 
       <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mt-4 max-w-4xl">
-        Aplikasi web mandiri yang dikembangkan untuk mengotomatisasi proses
-        pembersihan data (data cleansing) dan rekapitulasi survei kepuasan
-        pelanggan tNPS secara efisien dan akurat.
+        Aplikasi web mandiri yang dikembangkan untuk mengotomatisasi proses pembersihan data (data cleansing) dan rekapitulasi survei kepuasan pelanggan tNPS secara efisien dan akurat.
       </p>
 
       <div class="flex flex-wrap gap-2 mt-5">
@@ -401,198 +321,90 @@
         <span class="tag text-xs font-semibold px-3 py-1.5 rounded-lg">Data Cleansing</span>
         <span class="tag text-xs font-semibold px-3 py-1.5 rounded-lg">Web App</span>
       </div>
-
     </section>
 
 
     <!-- POWER BI DASHBOARD GALLERY -->
     <section id="featured" class="section-card overflow-hidden rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-colors duration-300">
-
-      <!-- HEADER -->
       <div class="p-6 sm:p-9 border-b border-slate-100 dark:border-slate-800">
-
-        <div class="eyebrow mb-2">
-          Featured Analytics Portfolio
-        </div>
-
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
-          Power BI Dashboard Portfolio
-        </h2>
-
+        <div class="eyebrow mb-2">Featured Analytics Portfolio</div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">Power BI Dashboard Portfolio</h2>
         <p class="text-sm text-slate-600 dark:text-slate-300 mt-3 max-w-4xl leading-relaxed">
-          Dashboard Customer Experience, tNPS Analytics, Operational Monitoring,
-          dan Business Reporting yang digunakan untuk mendukung pengambilan
-          keputusan berbasis data.
+          Dashboard Customer Experience, tNPS Analytics, Operational Monitoring, dan Business Reporting yang digunakan untuk mendukung pengambilan keputusan berbasis data.
         </p>
-
       </div>
 
-      <!-- OVERVIEW -->
       <div class="grid md:grid-cols-4 gap-4 p-6 sm:p-9 bg-slate-50 dark:bg-slate-950/50 border-b border-slate-100 dark:border-slate-800">
-
         <div class="bg-white dark:bg-slate-800/80 p-5 rounded-2xl border border-slate-200 dark:border-slate-700">
           <div class="text-xs text-slate-500 dark:text-slate-400 uppercase">Role</div>
           <div class="font-bold mt-2 text-slate-900 dark:text-white">Business Analyst</div>
         </div>
-
         <div class="bg-white dark:bg-slate-800/80 p-5 rounded-2xl border border-slate-200 dark:border-slate-700">
           <div class="text-xs text-slate-500 dark:text-slate-400 uppercase">Tools</div>
           <div class="font-bold mt-2 text-slate-900 dark:text-white">Power BI & Excel</div>
         </div>
-
         <div class="bg-white dark:bg-slate-800/80 p-5 rounded-2xl border border-slate-200 dark:border-slate-700">
           <div class="text-xs text-slate-500 dark:text-slate-400 uppercase">Domain</div>
           <div class="font-bold mt-2 text-slate-900 dark:text-white">Customer Experience</div>
         </div>
-
         <div class="bg-white dark:bg-slate-800/80 p-5 rounded-2xl border border-slate-200 dark:border-slate-700">
           <div class="text-xs text-slate-500 dark:text-slate-400 uppercase">Focus</div>
           <div class="font-bold mt-2 text-slate-900 dark:text-white">tNPS Analytics</div>
         </div>
-
       </div>
 
-      <!-- DASHBOARD LIST -->
       <div class="p-6 sm:p-9">
-
         <div class="space-y-10">
-
           <!-- DASHBOARD 1 -->
           <article class="rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl dark:shadow-none bg-white dark:bg-slate-800/40">
-
             <div class="p-5 border-b border-slate-100 dark:border-slate-800">
-
               <div class="flex flex-wrap gap-2 mb-3">
-
-                <span class="px-3 py-1 rounded-full bg-rose-50 text-rose-700 dark:bg-rose-950/70 dark:text-rose-300 text-xs font-bold">
-                  CUSTOMER EXPERIENCE
-                </span>
-
-                <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-950/70 dark:text-emerald-300 text-xs font-bold">
-                  PUBLIC REPORT
-                </span>
-
+                <span class="px-3 py-1 rounded-full bg-rose-50 text-rose-700 dark:bg-rose-950/70 dark:text-rose-300 text-xs font-bold">CUSTOMER EXPERIENCE</span>
+                <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-950/70 dark:text-emerald-300 text-xs font-bold">PUBLIC REPORT</span>
               </div>
-
-              <h3 class="text-xl font-extrabold text-slate-900 dark:text-white">
-                tNPS Customer Experience Dashboard
-              </h3>
-
+              <h3 class="text-xl font-extrabold text-slate-900 dark:text-white">tNPS Customer Experience Dashboard</h3>
               <p class="text-sm text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
-                Dashboard monitoring Transactional Net Promoter Score (tNPS)
-                untuk layanan Mobile dan IndiHome. Menampilkan trend customer
-                sentiment, complaint experience, purchase experience, serta
-                interaction touchpoint.
+                Dashboard monitoring Transactional Net Promoter Score (tNPS) untuk layanan Mobile dan IndiHome. Menampilkan trend customer sentiment, complaint experience, purchase experience, serta interaction touchpoint.
               </p>
-
             </div>
-
             <div class="bg-slate-100 dark:bg-slate-800 px-5 py-3 border-b border-slate-200 dark:border-slate-700 flex justify-between items-center">
-
-              <span class="text-xs font-bold text-slate-700 dark:text-slate-300">
-                Live Interactive Dashboard
-              </span>
-
-              <a
-                target="_blank"
-                href="https://app.powerbi.com/view?r=eyJrIjoiNjc3ODBiNzktZWZmZS00OTcwLWIyOWUtNzkzMTc2M2E2ZjFlIiwidCI6ImZjNzQzMDc1LTkzZWQtNGE1Yy04MmMwLWNhNWVhYzkxNDIyMCIsImMiOjEwfQ%3D%3D"
-                class="text-rose-700 dark:text-rose-400 font-semibold hover:underline">
-                Open Report ↗
-              </a>
-
+              <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Live Interactive Dashboard</span>
+              <a target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiNjc3ODBiNzktZWZmZS00OTcwLWIyOWUtNzkzMTc2M2E2ZjFlIiwidCI6ImZjNzQzMDc1LTkzZWQtNGE1Yy04MmMwLWNhNWVhYzkxNDIyMCIsImMiOjEwfQ%3D%3D" class="text-rose-700 dark:text-rose-400 font-semibold hover:underline">Open Report ↗</a>
             </div>
-
-            <iframe
-              title="tNPS Dashboard"
-              width="100%"
-              height="700"
-              src="https://app.powerbi.com/view?r=eyJrIjoiNjc3ODBiNzktZWZmZS00OTcwLWIyOWUtNzkzMTc2M2E2ZjFlIiwidCI6ImZjNzQzMDc1LTkzZWQtNGE1Yy04MmMwLWNhNWVhYzkxNDIyMCIsImMiOjEwfQ%3D%3D"
-              frameborder="0"
-              allowfullscreen="true">
-            </iframe>
-
+            <iframe title="tNPS Dashboard" width="100%" height="700" src="https://app.powerbi.com/view?r=eyJrIjoiNjc3ODBiNzktZWZmZS00OTcwLWIyOWUtNzkzMTc2M2E2ZjFlIiwidCI6ImZjNzQzMDc1LTkzZWQtNGE1Yy04MmMwLWNhNWVhYzkxNDIyMCIsImMiOjEwfQ%3D%3D" frameborder="0" allowfullscreen="true"></iframe>
           </article>
-
 
           <!-- DASHBOARD 2 -->
           <article class="rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl dark:shadow-none bg-white dark:bg-slate-800/40">
-
             <div class="p-5 border-b border-slate-100 dark:border-slate-800">
-
               <div class="flex flex-wrap gap-2 mb-3">
-
-                <span class="px-3 py-1 rounded-full bg-sky-50 text-sky-700 dark:bg-sky-950/70 dark:text-sky-300 text-xs font-bold">
-                  CUSTOMER EXPERIENCE
-                </span>
-
-                <span class="px-3 py-1 rounded-full bg-amber-50 text-amber-700 dark:bg-amber-950/70 dark:text-amber-300 text-xs font-bold">
-                  INTERNAL REPORT
-                </span>
-
+                <span class="px-3 py-1 rounded-full bg-sky-50 text-sky-700 dark:bg-sky-950/70 dark:text-sky-300 text-xs font-bold">CUSTOMER EXPERIENCE</span>
+                <span class="px-3 py-1 rounded-full bg-amber-50 text-amber-700 dark:bg-amber-950/70 dark:text-amber-300 text-xs font-bold">INTERNAL REPORT</span>
               </div>
-
-              <h3 class="text-xl font-extrabold text-slate-900 dark:text-white">
-                Customer Experience Operational Dashboard
-              </h3>
-
+              <h3 class="text-xl font-extrabold text-slate-900 dark:text-white">Customer Experience Operational Dashboard</h3>
               <p class="text-sm text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
-                Dashboard operasional untuk monitoring performa customer
-                experience, tracking KPI regional, analisis issue pelanggan,
-                customer satisfaction, dan reporting bisnis secara real-time.
+                Dashboard operasional untuk monitoring performa customer experience, tracking KPI regional, analisis issue pelanggan, customer satisfaction, dan reporting bisnis secara real-time.
               </p>
-
             </div>
-
             <div class="bg-slate-100 dark:bg-slate-800 px-5 py-3 border-b border-slate-200 dark:border-slate-700 flex justify-between items-center">
-
-              <span class="text-xs font-bold text-slate-700 dark:text-slate-300">
-                Internal Power BI Report
-              </span>
-
-              <a
-                target="_blank"
-                href="https://app.powerbi.com/reportEmbed?reportId=2c0bd7ee-7052-4ba0-bb9b-47b1ab97e83e&autoAuth=true&ctid=fc743075-93ed-4a5c-82c0-ca5eac914220"
-                class="text-sky-700 dark:text-sky-400 font-semibold hover:underline">
-                Open Report ↗
-              </a>
-
+              <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Internal Power BI Report</span>
+              <a target="_blank" href="https://app.powerbi.com/reportEmbed?reportId=2c0bd7ee-7052-4ba0-bb9b-47b1ab97e83e&autoAuth=true&ctid=fc743075-93ed-4a5c-82c0-ca5eac914220" class="text-sky-700 dark:text-sky-400 font-semibold hover:underline">Open Report ↗</a>
             </div>
-
-            <iframe
-              title="Customer Experience Dashboard"
-              width="100%"
-              height="700"
-              src="https://app.powerbi.com/reportEmbed?reportId=2c0bd7ee-7052-4ba0-bb9b-47b1ab97e83e&autoAuth=true&ctid=fc743075-93ed-4a5c-82c0-ca5eac914220"
-              frameborder="0"
-              allowfullscreen="true">
-            </iframe>
-
+            <iframe title="Customer Experience Dashboard" width="100%" height="700" src="https://app.powerbi.com/reportEmbed?reportId=2c0bd7ee-7052-4ba0-bb9b-47b1ab97e83e&autoAuth=true&ctid=fc743075-93ed-4a5c-82c0-ca5eac914220" frameborder="0" allowfullscreen="true"></iframe>
           </article>
-
         </div>
-
       </div>
-
     </section>
 
 
     <!-- SKILLS & TOOLS -->
     <section id="skills" class="section-card p-6 sm:p-9 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-colors duration-300">
-
       <div class="eyebrow mb-2">What I use & bring</div>
-
-      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-7">
-        Skills & Tools Portfolio
-      </h2>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-7">Skills & Tools Portfolio</h2>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-
-        <!-- 1. POWER BI -->
         <div class="rounded-2xl bg-rose-50/70 dark:bg-rose-950/30 border border-rose-100 dark:border-rose-900/50 p-5">
-          <div class="text-rose-700 dark:text-rose-400 text-xs font-extrabold uppercase tracking-wider mb-4">
-            1. Power BI & Visualization
-          </div>
-
+          <div class="text-rose-700 dark:text-rose-400 text-xs font-extrabold uppercase tracking-wider mb-4">1. Power BI & Visualization</div>
           <div class="flex flex-wrap gap-2">
             <span class="skill-tag">Power BI</span>
             <span class="skill-tag">DAX & Power Query</span>
@@ -601,12 +413,8 @@
           </div>
         </div>
 
-        <!-- 2. MICROSOFT EXCEL, TEAMS, & OFFICE -->
         <div class="rounded-2xl bg-emerald-50/70 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/50 p-5">
-          <div class="text-emerald-700 dark:text-emerald-400 text-xs font-extrabold uppercase tracking-wider mb-4">
-            2. Microsoft Suite & Collaboration
-          </div>
-
+          <div class="text-emerald-700 dark:text-emerald-400 text-xs font-extrabold uppercase tracking-wider mb-4">2. Microsoft Suite & Collaboration</div>
           <div class="flex flex-wrap gap-2">
             <span class="skill-tag">Microsoft Excel (Advanced)</span>
             <span class="skill-tag">Microsoft Teams</span>
@@ -615,12 +423,8 @@
           </div>
         </div>
 
-        <!-- 3. ANACONDA -->
         <div class="rounded-2xl bg-sky-50/70 dark:bg-sky-950/30 border border-sky-100 dark:border-sky-900/50 p-5">
-          <div class="text-sky-700 dark:text-sky-400 text-xs font-extrabold uppercase tracking-wider mb-4">
-            3. Anaconda & Data Environment
-          </div>
-
+          <div class="text-sky-700 dark:text-sky-400 text-xs font-extrabold uppercase tracking-wider mb-4">3. Anaconda & Data Environment</div>
           <div class="flex flex-wrap gap-2">
             <span class="skill-tag">Anaconda Navigator</span>
             <span class="skill-tag">Jupyter Notebook</span>
@@ -629,12 +433,8 @@
           </div>
         </div>
 
-        <!-- 4. BAHASA PEMOGRAMAN -->
         <div class="rounded-2xl bg-amber-50/70 dark:bg-amber-950/30 border border-amber-100 dark:border-amber-900/50 p-5">
-          <div class="text-amber-700 dark:text-amber-400 text-xs font-extrabold uppercase tracking-wider mb-4">
-            4. Programming Languages
-          </div>
-
+          <div class="text-amber-700 dark:text-amber-400 text-xs font-extrabold uppercase tracking-wider mb-4">4. Programming Languages</div>
           <div class="flex flex-wrap gap-2">
             <span class="skill-tag">PHP & Laravel 8</span>
             <span class="skill-tag">Python</span>
@@ -642,9 +442,7 @@
             <span class="skill-tag">REST APIs</span>
           </div>
         </div>
-
       </div>
-
     </section>
 
   </main>
@@ -655,9 +453,7 @@
     <p class="text-xs text-slate-500 dark:text-slate-400">
       © 2026 Albert Rapael Aritonang
       <span class="mx-1 text-rose-400">•</span>
-      <a href="mailto:rafaelart123@gmail.com" class="hover:text-rose-700 dark:hover:text-rose-400">
-        rafaelart123@gmail.com
-      </a>
+      <a href="mailto:rafaelart123@gmail.com" class="hover:text-rose-700 dark:hover:text-rose-400">rafaelart123@gmail.com</a>
     </p>
   </footer>
 
@@ -673,15 +469,14 @@
       if (isDark) {
         lightIcon.classList.remove('hidden');
         darkIcon.classList.add('hidden');
-        themeColorMeta.setAttribute('content', '#020617'); // slate-950
+        themeColorMeta.setAttribute('content', '#020617');
       } else {
         darkIcon.classList.remove('hidden');
         lightIcon.classList.add('hidden');
-        themeColorMeta.setAttribute('content', '#f8fafc'); // slate-50
+        themeColorMeta.setAttribute('content', '#f8fafc');
       }
     }
 
-    // Set icon awal saat halaman dimuat
     updateThemeUI();
 
     themeToggleBtn.addEventListener('click', () => {
