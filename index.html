@@ -263,6 +263,8 @@
     .frame-bar i { width: 10px; height: 10px; border-radius: 50%; background: var(--line); }
     .frame-bar span { margin-left: 8px; }
     .frame iframe { display: block; width: 100%; height: clamp(420px, 62vw, 700px); border: 0; }
+    .shot { display: block; overflow-x: auto; cursor: zoom-in; }
+    .shot img { width: 100%; min-width: 640px; height: auto; }
 
     /* ---------- CV ---------- */
     .cv { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(24px, 4vw, 48px); padding: clamp(26px, 4vw, 44px); align-items: center; }
@@ -386,7 +388,6 @@
       .skill { border-right: 0 !important; border-bottom: 1px solid var(--line); }
       .skill:last-child { border-bottom: 0; }
       .loc { left: -8px; }
-      .cta { border-radius: 26px; }
     }
   </style>
 </head>
@@ -575,7 +576,7 @@
 
         <div class="bi-tabs" role="tablist" aria-label="Pilih dashboard">
           <button class="bi-tab" role="tab" id="tab-1" aria-controls="bi-1" aria-selected="true">tNPS Customer Experience</button>
-          <button class="bi-tab" role="tab" id="tab-2" aria-controls="bi-2" aria-selected="false" tabindex="-1">CX Operational</button>
+          <button class="bi-tab" role="tab" id="tab-2" aria-controls="bi-2" aria-selected="false" tabindex="-1">Customer Care NPS</button>
         </div>
 
         <div class="bi-panel" role="tabpanel" id="bi-1" aria-labelledby="tab-1">
@@ -597,14 +598,16 @@
           <div class="bi-info">
             <div>
               <div class="badges"><span class="badge cx">Customer Experience</span><span class="badge int">Laporan internal</span></div>
-              <h3>Customer Experience Operational Dashboard</h3>
-              <p>Monitoring performa customer experience: KPI regional, analisis isu pelanggan, kepuasan pelanggan, dan reporting bisnis secara real-time.</p>
+              <h3>Customer Care NPS Dashboard</h3>
+              <p>Analitik NPS layanan Mobile dan IndiHome: total responden, distribusi promotor–detraktor, tren skor bulanan, performa per journey, unit layanan, dan promoter rate per regional.</p>
             </div>
-            <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://app.powerbi.com/reportEmbed?reportId=2c0bd7ee-7052-4ba0-bb9b-47b1ab97e83e&autoAuth=true&ctid=fc743075-93ed-4a5c-82c0-ca5eac914220">Buka layar penuh</a>
+            <a class="btn btn-ghost" href="cx-operational.webp" target="_blank" rel="noopener">Lihat ukuran penuh</a>
           </div>
           <div class="frame">
-            <div class="frame-bar"><i></i><i></i><i></i><span>Laporan internal, perlu login akun Telkomsel</span></div>
-            <iframe title="Customer Experience Operational Dashboard" loading="lazy" allowfullscreen data-src="https://app.powerbi.com/reportEmbed?reportId=2c0bd7ee-7052-4ba0-bb9b-47b1ab97e83e&autoAuth=true&ctid=fc743075-93ed-4a5c-82c0-ca5eac914220"></iframe>
+            <div class="frame-bar"><i></i><i></i><i></i><span>Pratinjau statis, laporan asli hanya untuk akun internal</span></div>
+            <a class="shot" href="cx-operational.webp" target="_blank" rel="noopener">
+              <img src="cx-operational.webp" width="1411" height="741" alt="Customer Care NPS Dashboard: KPI responden, NPS, distribusi promotor, tren skor, dan promoter rate per regional" loading="lazy">
+            </a>
           </div>
         </div>
       </div>
@@ -756,7 +759,7 @@
       });
     })();
 
-    // Tab Power BI (iframe kedua baru dimuat saat dibuka)
+    // Tab Power BI
     (function () {
       var tabs = Array.prototype.slice.call(document.querySelectorAll('.bi-tab'));
       function select(tab) {
@@ -765,10 +768,6 @@
           t.setAttribute('aria-selected', on ? 'true' : 'false');
           t.tabIndex = on ? 0 : -1;
           panel.hidden = !on;
-          if (on) {
-            var f = panel.querySelector('iframe[data-src]');
-            if (f && !f.src) f.src = f.getAttribute('data-src');
-          }
         });
       }
       tabs.forEach(function (t, i) {
@@ -780,6 +779,7 @@
         });
       });
     })();
+
     // Salin email
     document.querySelectorAll('.copy-btn').forEach(function (b) {
       b.addEventListener('click', function () {
