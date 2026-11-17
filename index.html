@@ -1,38 +1,74 @@
-
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#f8fafc">
+  <meta name="theme-color" content="#f8fafc" id="theme-color-meta">
   <title>Albert Rapael Aritonang — Business Analyst & QA Portfolio</title>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+
+  <!-- Script Inisialisasi Tema Sebelum Render (Mencegah Flash) -->
+  <script>
+    if (
+      localStorage.getItem('theme') === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- CSS lokal -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Fallback styling agar class custom di style.css tetap rapi saat dark mode -->
+  <style>
+    .dark .section-card {
+      background-color: #0f172a; /* slate-900 */
+      border-color: #1e293b; /* slate-800 */
+    }
+    .dark .nav-link {
+      color: #cbd5e1; /* slate-300 */
+    }
+    .dark .nav-link:hover {
+      color: #fb7185; /* rose-400 */
+    }
+    .dark .tag,
+    .dark .skill-tag {
+      background-color: #1e293b;
+      color: #e2e8f0;
+      border-color: #334155;
+    }
+  </style>
 </head>
 
-<body class="antialiased selection:bg-rose-200 selection:text-rose-900">
+<body class="antialiased bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 selection:bg-rose-200 selection:text-rose-900 dark:selection:bg-rose-900 dark:selection:text-rose-100">
 
   <!-- NAVIGATION -->
-  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200/80">
+  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-b border-slate-200/80 dark:border-slate-800 transition-colors duration-300">
     <div class="max-w-6xl mx-auto px-5 sm:px-6 min-h-16 flex flex-wrap items-center justify-between gap-3 py-3">
 
       <a href="#" class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-rose-500 to-orange-400 flex items-center justify-center font-extrabold text-white shadow-lg shadow-rose-200">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-rose-500 to-orange-400 flex items-center justify-center font-extrabold text-white shadow-lg shadow-rose-200 dark:shadow-rose-950/50">
           AA
         </div>
 
-        <span class="font-extrabold text-sm tracking-wide text-slate-800">
+        <span class="font-extrabold text-sm tracking-wide text-slate-800 dark:text-slate-100">
           ALBERT RAPAEL ARITONANG
         </span>
 
-        <span class="hidden md:inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-100">
+        <span class="hidden md:inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-100 dark:bg-emerald-950/60 dark:text-emerald-300 dark:border-emerald-800/60">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           Business Analyst
         </span>
@@ -44,7 +80,21 @@
         <a href="#tools" class="nav-link">Tools</a>
         <a href="#featured" class="nav-link">Power BI</a>
         <a href="#skills" class="nav-link">Skills</a>
-        <a href="mailto:rafaelart123@gmail.com" class="bg-rose-600 hover:bg-rose-700 text-white px-4 py-2 rounded-xl transition shadow-md shadow-rose-200">
+
+        <!-- TOMBOL DARK / LIGHT MODE -->
+        <button id="theme-toggle" type="button" aria-label="Toggle Dark Mode"
+          class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 transition">
+          <!-- Icon Matahari (Muncul saat Dark Mode aktif) -->
+          <svg id="theme-toggle-light-icon" class="hidden w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+          </svg>
+          <!-- Icon Bulan (Muncul saat Light Mode aktif) -->
+          <svg id="theme-toggle-dark-icon" class="hidden w-4 h-4 text-slate-700" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+          </svg>
+        </button>
+
+        <a href="mailto:rafaelart123@gmail.com" class="bg-rose-600 hover:bg-rose-700 text-white px-4 py-2 rounded-xl transition shadow-md shadow-rose-200 dark:shadow-rose-950/50">
           Contact
         </a>
       </div>
@@ -55,68 +105,68 @@
   <main class="max-w-6xl mx-auto px-5 sm:px-6 py-8 sm:py-12 space-y-8 sm:space-y-10">
 
     <!-- HERO -->
-    <section class="relative overflow-hidden rounded-[2rem] bg-white border border-slate-200 shadow-xl shadow-slate-200/60">
+    <section class="relative overflow-hidden rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/60 dark:shadow-none transition-colors duration-300">
 
-      <div class="absolute inset-0 soft-grid opacity-40 pointer-events-none"></div>
-      <div class="absolute -top-24 -right-20 w-96 h-96 bg-rose-100 rounded-full blur-3xl opacity-70"></div>
-      <div class="absolute -bottom-28 left-1/3 w-80 h-80 bg-orange-100 rounded-full blur-3xl opacity-60"></div>
+      <div class="absolute inset-0 soft-grid opacity-40 dark:opacity-10 pointer-events-none"></div>
+      <div class="absolute -top-24 -right-20 w-96 h-96 bg-rose-100 dark:bg-rose-900/20 rounded-full blur-3xl opacity-70"></div>
+      <div class="absolute -bottom-28 left-1/3 w-80 h-80 bg-orange-100 dark:bg-orange-900/20 rounded-full blur-3xl opacity-60"></div>
 
       <div class="relative grid lg:grid-cols-12 gap-10 items-center p-7 sm:p-10 lg:p-14">
 
         <div class="lg:col-span-7 space-y-6">
 
-          <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-rose-50 text-rose-700 border border-rose-100 text-xs font-bold tracking-wide">
+          <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-rose-50 text-rose-700 border border-rose-100 dark:bg-rose-950/60 dark:text-rose-300 dark:border-rose-800/60 text-xs font-bold tracking-wide">
             <span class="w-2 h-2 rounded-full bg-rose-500"></span>
             BUSINESS ANALYST @ TELKOMSEL
-            <span class="text-rose-300">•</span>
+            <span class="text-rose-300 dark:text-rose-700">•</span>
             EX-QA @ BNI
           </div>
 
           <div>
-            <p class="text-slate-500 font-semibold mb-2">
+            <p class="text-slate-500 dark:text-slate-400 font-semibold mb-2">
               Hello, welcome to my portfolio
             </p>
 
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08] text-slate-900">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08] text-slate-900 dark:text-white">
               Hi, I'm
               <span class="gradient-text">Albert Rapael Aritonang</span>
             </h1>
           </div>
 
-          <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl">
+          <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
             Lulusan Sarjana Rekayasa Perangkat Lunak IT Del dengan keahlian di bidang
-            <strong class="text-slate-800">Business Analysis</strong>,
-            <strong class="text-slate-800">Data Cleansing & Visualization</strong>, serta
-            <strong class="text-slate-800">Quality Assurance</strong>.
+            <strong class="text-slate-800 dark:text-white">Business Analysis</strong>,
+            <strong class="text-slate-800 dark:text-white">Data Cleansing & Visualization</strong>, serta
+            <strong class="text-slate-800 dark:text-white">Quality Assurance</strong>.
             Berpengalaman mengelola analitik pelanggan dan menjembatani kebutuhan bisnis ke solusi digital.
           </p>
 
           <div class="flex flex-wrap items-center gap-3 pt-1">
             <a href="Albert_Rapael_Aritonang_CV.pdf" target="_blank"
-              class="px-5 py-3 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-semibold text-sm transition shadow-lg shadow-rose-200">
+              class="px-5 py-3 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-semibold text-sm transition shadow-lg shadow-rose-200 dark:shadow-rose-950/50">
               Download CV ↓
             </a>
 
             <a href="https://www.linkedin.com/in/albertaritonang/" target="_blank"
-              class="px-5 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-700 font-semibold text-sm border border-slate-200 transition">
+              class="px-5 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-200 dark:border-slate-700 font-semibold text-sm transition">
               LinkedIn Profile ↗
             </a>
           </div>
 
           <div class="flex flex-wrap gap-6 pt-3 text-sm">
             <div>
-              <div class="font-extrabold text-slate-900">Business Analysis</div>
-              <div class="text-slate-500 text-xs mt-1">Requirements & process</div>
+              <div class="font-extrabold text-slate-900 dark:text-white">Business Analysis</div>
+              <div class="text-slate-500 dark:text-slate-400 text-xs mt-1">Requirements & process</div>
             </div>
 
             <div>
-              <div class="font-extrabold text-slate-900">Data & Reporting</div>
-              <div class="text-slate-500 text-xs mt-1">Cleansing & visualization</div>
+              <div class="font-extrabold text-slate-900 dark:text-white">Data & Reporting</div>
+              <div class="text-slate-500 dark:text-slate-400 text-xs mt-1">Cleansing & visualization</div>
             </div>
 
             <div>
-              <div class="font-extrabold text-slate-900">Quality Assurance</div>
-              <div class="text-slate-500 text-xs mt-1">Testing & validation</div>
+              <div class="font-extrabold text-slate-900 dark:text-white">Quality Assurance</div>
+              <div class="text-slate-500 dark:text-slate-400 text-xs mt-1">Testing & validation</div>
             </div>
           </div>
 
@@ -125,15 +175,15 @@
         <div class="lg:col-span-5 flex justify-center lg:justify-end">
           <div class="relative w-64 sm:w-72">
 
-            <div class="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-rose-200 to-orange-100 rotate-3"></div>
+            <div class="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-rose-200 to-orange-100 dark:from-rose-900/40 dark:to-orange-900/30 rotate-3"></div>
 
-            <div class="relative h-80 sm:h-96 rounded-[1.7rem] overflow-hidden border-4 border-white shadow-2xl bg-slate-100">
+            <div class="relative h-80 sm:h-96 rounded-[1.7rem] overflow-hidden border-4 border-white dark:border-slate-800 shadow-2xl bg-slate-100 dark:bg-slate-800">
 
               <img src="foto.png"
                 alt="Foto profesional Albert Rapael Aritonang"
                 class="w-full h-full object-cover object-top">
 
-              <div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-slate-950/75 to-transparent">
+              <div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-slate-950/80 to-transparent">
                 <div class="text-white font-bold">Albert Rapael Aritonang</div>
                 <div class="text-rose-100 text-xs mt-1">
                   Business Analyst · Quality Assurance
@@ -142,9 +192,9 @@
 
             </div>
 
-            <div class="absolute -right-5 top-8 bg-white rounded-2xl px-4 py-3 shadow-lg border border-slate-100">
-              <div class="text-xs text-slate-500">Based in</div>
-              <div class="font-bold text-slate-800 text-sm">Indonesia 🇮🇩</div>
+            <div class="absolute -right-5 top-8 bg-white dark:bg-slate-800 rounded-2xl px-4 py-3 shadow-lg border border-slate-100 dark:border-slate-700">
+              <div class="text-xs text-slate-500 dark:text-slate-400">Based in</div>
+              <div class="font-bold text-slate-800 dark:text-slate-100 text-sm">Indonesia 🇮🇩</div>
             </div>
 
           </div>
@@ -155,37 +205,37 @@
 
 
     <!-- CV -->
-    <section id="cv" class="section-card p-6 sm:p-9">
+    <section id="cv" class="section-card p-6 sm:p-9 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-colors duration-300">
 
       <div class="grid lg:grid-cols-12 gap-7 items-center">
 
         <div class="lg:col-span-4 space-y-4">
           <div class="eyebrow">Curriculum Vitae</div>
 
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
             Professional Resume
           </h2>
 
-          <p class="text-sm text-slate-600 leading-relaxed">
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
             Ringkasan rekam jejak karier, latar belakang pendidikan Sarjana IT Del,
             serta portofolio kompetensi profesional dalam satu dokumen terpadu.
           </p>
 
           <div class="flex flex-wrap gap-2 pt-1">
             <a href="Albert_Rapael_Aritonang_CV.pdf" target="_blank"
-              class="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold transition">
+              class="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700 text-white text-sm font-semibold transition">
               Buka layar penuh ↗
             </a>
 
             <a href="Albert_Rapael_Aritonang_CV.pdf" download
-              class="px-4 py-2.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 text-sm font-semibold transition">
+              class="px-4 py-2.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 dark:bg-rose-950/60 dark:hover:bg-rose-900/60 dark:text-rose-300 text-sm font-semibold transition">
               Download PDF
             </a>
           </div>
         </div>
 
         <div class="lg:col-span-8">
-          <div class="rounded-2xl overflow-hidden border border-slate-200 bg-slate-50 shadow-inner h-[320px] sm:h-[390px]">
+          <div class="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 shadow-inner h-[320px] sm:h-[390px]">
 
             <iframe src="Albert_Rapael_Aritonang_CV.pdf"
               title="Pratinjau CV Albert Aritonang"
@@ -202,24 +252,24 @@
 
 
     <!-- PERJALANAN DINAS -->
-    <section id="travel" class="section-card p-6 sm:p-9 space-y-7">
+    <section id="travel" class="section-card p-6 sm:p-9 space-y-7 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-colors duration-300">
 
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
 
         <div>
           <div class="eyebrow mb-2">Field Engagement & Business Trips</div>
 
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
             Perjalanan Dinas & Kunjungan Operasional
           </h2>
 
-          <p class="text-sm text-slate-600 mt-3 max-w-3xl leading-relaxed">
+          <p class="text-sm text-slate-600 dark:text-slate-300 mt-3 max-w-3xl leading-relaxed">
             Dokumentasi perjalanan dinas dan keterlibatan langsung di lapangan
             untuk mendukung evaluasi Customer Experience serta koordinasi operasional regional.
           </p>
         </div>
 
-        <span class="shrink-0 px-4 py-2 rounded-full text-xs font-bold bg-rose-50 text-rose-700 border border-rose-100">
+        <span class="shrink-0 px-4 py-2 rounded-full text-xs font-bold bg-rose-50 text-rose-700 border border-rose-100 dark:bg-rose-950/60 dark:text-rose-300 dark:border-rose-800/60">
           TELKOMSEL JOURNEY
         </span>
 
@@ -229,27 +279,27 @@
       <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
 
         <!-- FOTO BALIGE -->
-        <article class="travel-card rounded-2xl border border-slate-200 bg-white hover:shadow-xl transition group">
+        <article class="travel-card rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/60 hover:shadow-xl transition group">
 
-          <div class="overflow-hidden relative">
-            <img class="travel-photo group-hover:scale-105"
+          <div class="overflow-hidden relative rounded-t-2xl">
+            <img class="travel-photo group-hover:scale-105 transition-transform duration-300"
               src="balige.jpg"
               alt="Dokumentasi perjalanan dinas Balige"
               loading="lazy">
 
-            <span class="absolute top-4 left-4 bg-white/95 text-rose-700 text-xs font-bold px-3 py-1.5 rounded-full shadow">
+            <span class="absolute top-4 left-4 bg-white/95 dark:bg-slate-900/90 text-rose-700 dark:text-rose-400 text-xs font-bold px-3 py-1.5 rounded-full shadow">
               SUMATERA UTARA
             </span>
           </div>
 
           <div class="p-5">
-            <h3 class="text-lg font-extrabold text-slate-900">Balige</h3>
+            <h3 class="text-lg font-extrabold text-slate-900 dark:text-white">Balige</h3>
 
-            <p class="text-sm text-slate-600 leading-relaxed mt-2">
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mt-2">
               Dokumentasi perjalanan dinas dan kegiatan lapangan di Balige.
             </p>
 
-            <div class="mt-4 flex items-center gap-2 text-xs font-semibold text-rose-700">
+            <div class="mt-4 flex items-center gap-2 text-xs font-semibold text-rose-700 dark:text-rose-400">
               📍 Business trip · Balige
             </div>
           </div>
@@ -258,27 +308,27 @@
 
 
         <!-- FOTO SEMARANG -->
-        <article class="travel-card rounded-2xl border border-slate-200 bg-white hover:shadow-xl transition group">
+        <article class="travel-card rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/60 hover:shadow-xl transition group">
 
-          <div class="overflow-hidden relative">
-            <img class="travel-photo group-hover:scale-105"
+          <div class="overflow-hidden relative rounded-t-2xl">
+            <img class="travel-photo group-hover:scale-105 transition-transform duration-300"
               src="semarang.jpg"
               alt="Dokumentasi perjalanan dinas Semarang"
               loading="lazy">
 
-            <span class="absolute top-4 left-4 bg-white/95 text-rose-700 text-xs font-bold px-3 py-1.5 rounded-full shadow">
+            <span class="absolute top-4 left-4 bg-white/95 dark:bg-slate-900/90 text-rose-700 dark:text-rose-400 text-xs font-bold px-3 py-1.5 rounded-full shadow">
               JAWA TENGAH
             </span>
           </div>
 
           <div class="p-5">
-            <h3 class="text-lg font-extrabold text-slate-900">Semarang</h3>
+            <h3 class="text-lg font-extrabold text-slate-900 dark:text-white">Semarang</h3>
 
-            <p class="text-sm text-slate-600 leading-relaxed mt-2">
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mt-2">
               Dokumentasi perjalanan dinas dan kegiatan lapangan di Semarang.
             </p>
 
-            <div class="mt-4 flex items-center gap-2 text-xs font-semibold text-rose-700">
+            <div class="mt-4 flex items-center gap-2 text-xs font-semibold text-rose-700 dark:text-rose-400">
               📍 Business trip · Semarang
             </div>
           </div>
@@ -287,27 +337,27 @@
 
 
         <!-- FOTO MEDAN -->
-        <article class="travel-card rounded-2xl border border-slate-200 bg-white hover:shadow-xl transition group">
+        <article class="travel-card rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/60 hover:shadow-xl transition group">
 
-          <div class="overflow-hidden relative">
-            <img class="travel-photo group-hover:scale-105"
+          <div class="overflow-hidden relative rounded-t-2xl">
+            <img class="travel-photo group-hover:scale-105 transition-transform duration-300"
               src="medan.jpg"
               alt="Dokumentasi perjalanan dinas Medan"
               loading="lazy">
 
-            <span class="absolute top-4 left-4 bg-white/95 text-rose-700 text-xs font-bold px-3 py-1.5 rounded-full shadow">
+            <span class="absolute top-4 left-4 bg-white/95 dark:bg-slate-900/90 text-rose-700 dark:text-rose-400 text-xs font-bold px-3 py-1.5 rounded-full shadow">
               SUMATERA UTARA
             </span>
           </div>
 
           <div class="p-5">
-            <h3 class="text-lg font-extrabold text-slate-900">Medan</h3>
+            <h3 class="text-lg font-extrabold text-slate-900 dark:text-white">Medan</h3>
 
-            <p class="text-sm text-slate-600 leading-relaxed mt-2">
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mt-2">
               Dokumentasi perjalanan dinas dan kegiatan lapangan di Medan.
             </p>
 
-            <div class="mt-4 flex items-center gap-2 text-xs font-semibold text-rose-700">
+            <div class="mt-4 flex items-center gap-2 text-xs font-semibold text-rose-700 dark:text-rose-400">
               📍 Business trip · Medan
             </div>
           </div>
@@ -316,33 +366,31 @@
 
       </div>
 
-     
-
     </section>
 
 
     <!-- FEATURED TOOL -->
-    <section id="tools" class="section-card p-6 sm:p-9">
+    <section id="tools" class="section-card p-6 sm:p-9 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-colors duration-300">
 
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
 
         <div>
           <div class="eyebrow mb-2">Featured Tool</div>
 
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
             Rekap & Data Cleansing Tool (tNPS)
           </h2>
         </div>
 
         <a href="https://rekapin-nps.vercel.app/"
           target="_blank"
-          class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-sm font-bold transition shadow-lg shadow-rose-200">
+          class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-sm font-bold transition shadow-lg shadow-rose-200 dark:shadow-rose-950/50">
           Buka Live Tool ↗
         </a>
 
       </div>
 
-      <p class="text-sm text-slate-600 leading-relaxed mt-4 max-w-4xl">
+      <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mt-4 max-w-4xl">
         Aplikasi web mandiri yang dikembangkan untuk mengotomatisasi proses
         pembersihan data (data cleansing) dan rekapitulasi survei kepuasan
         pelanggan tNPS secara efisien dan akurat.
@@ -357,190 +405,190 @@
     </section>
 
 
-<!-- POWER BI DASHBOARD GALLERY -->
-<section id="featured" class="section-card overflow-hidden">
+    <!-- POWER BI DASHBOARD GALLERY -->
+    <section id="featured" class="section-card overflow-hidden rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-colors duration-300">
 
-  <!-- HEADER -->
-  <div class="p-6 sm:p-9 border-b border-slate-100">
+      <!-- HEADER -->
+      <div class="p-6 sm:p-9 border-b border-slate-100 dark:border-slate-800">
 
-    <div class="eyebrow mb-2">
-      Featured Analytics Portfolio
-    </div>
+        <div class="eyebrow mb-2">
+          Featured Analytics Portfolio
+        </div>
 
-    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
-      Power BI Dashboard Portfolio
-    </h2>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+          Power BI Dashboard Portfolio
+        </h2>
 
-    <p class="text-sm text-slate-600 mt-3 max-w-4xl leading-relaxed">
-      Dashboard Customer Experience, tNPS Analytics, Operational Monitoring,
-      dan Business Reporting yang digunakan untuk mendukung pengambilan
-      keputusan berbasis data.
-    </p>
+        <p class="text-sm text-slate-600 dark:text-slate-300 mt-3 max-w-4xl leading-relaxed">
+          Dashboard Customer Experience, tNPS Analytics, Operational Monitoring,
+          dan Business Reporting yang digunakan untuk mendukung pengambilan
+          keputusan berbasis data.
+        </p>
 
-  </div>
+      </div>
 
-  <!-- OVERVIEW -->
-  <div class="grid md:grid-cols-4 gap-4 p-6 sm:p-9 bg-slate-50 border-b border-slate-100">
+      <!-- OVERVIEW -->
+      <div class="grid md:grid-cols-4 gap-4 p-6 sm:p-9 bg-slate-50 dark:bg-slate-950/50 border-b border-slate-100 dark:border-slate-800">
 
-    <div class="bg-white p-5 rounded-2xl border border-slate-200">
-      <div class="text-xs text-slate-500 uppercase">Role</div>
-      <div class="font-bold mt-2">Business Analyst</div>
-    </div>
+        <div class="bg-white dark:bg-slate-800/80 p-5 rounded-2xl border border-slate-200 dark:border-slate-700">
+          <div class="text-xs text-slate-500 dark:text-slate-400 uppercase">Role</div>
+          <div class="font-bold mt-2 text-slate-900 dark:text-white">Business Analyst</div>
+        </div>
 
-    <div class="bg-white p-5 rounded-2xl border border-slate-200">
-      <div class="text-xs text-slate-500 uppercase">Tools</div>
-      <div class="font-bold mt-2">Power BI</div>
-    </div>
+        <div class="bg-white dark:bg-slate-800/80 p-5 rounded-2xl border border-slate-200 dark:border-slate-700">
+          <div class="text-xs text-slate-500 dark:text-slate-400 uppercase">Tools</div>
+          <div class="font-bold mt-2 text-slate-900 dark:text-white">Power BI</div>
+        </div>
 
-    <div class="bg-white p-5 rounded-2xl border border-slate-200">
-      <div class="text-xs text-slate-500 uppercase">Domain</div>
-      <div class="font-bold mt-2">Customer Experience</div>
-    </div>
+        <div class="bg-white dark:bg-slate-800/80 p-5 rounded-2xl border border-slate-200 dark:border-slate-700">
+          <div class="text-xs text-slate-500 dark:text-slate-400 uppercase">Domain</div>
+          <div class="font-bold mt-2 text-slate-900 dark:text-white">Customer Experience</div>
+        </div>
 
-    <div class="bg-white p-5 rounded-2xl border border-slate-200">
-      <div class="text-xs text-slate-500 uppercase">Focus</div>
-      <div class="font-bold mt-2">tNPS Analytics</div>
-    </div>
+        <div class="bg-white dark:bg-slate-800/80 p-5 rounded-2xl border border-slate-200 dark:border-slate-700">
+          <div class="text-xs text-slate-500 dark:text-slate-400 uppercase">Focus</div>
+          <div class="font-bold mt-2 text-slate-900 dark:text-white">tNPS Analytics</div>
+        </div>
 
-  </div>
+      </div>
 
-  <!-- DASHBOARD LIST -->
-  <div class="p-6 sm:p-9">
+      <!-- DASHBOARD LIST -->
+      <div class="p-6 sm:p-9">
 
-    <div class="space-y-10">
+        <div class="space-y-10">
 
-      <!-- DASHBOARD 1 -->
-      <article class="rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-white">
+          <!-- DASHBOARD 1 -->
+          <article class="rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl dark:shadow-none bg-white dark:bg-slate-800/40">
 
-        <div class="p-5 border-b border-slate-100">
+            <div class="p-5 border-b border-slate-100 dark:border-slate-800">
 
-          <div class="flex flex-wrap gap-2 mb-3">
+              <div class="flex flex-wrap gap-2 mb-3">
 
-            <span class="px-3 py-1 rounded-full bg-rose-50 text-rose-700 text-xs font-bold">
-              CUSTOMER EXPERIENCE
-            </span>
+                <span class="px-3 py-1 rounded-full bg-rose-50 text-rose-700 dark:bg-rose-950/70 dark:text-rose-300 text-xs font-bold">
+                  CUSTOMER EXPERIENCE
+                </span>
 
-            <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold">
-              PUBLIC REPORT
-            </span>
+                <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-950/70 dark:text-emerald-300 text-xs font-bold">
+                  PUBLIC REPORT
+                </span>
 
-          </div>
+              </div>
 
-          <h3 class="text-xl font-extrabold text-slate-900">
-            tNPS Customer Experience Dashboard
-          </h3>
+              <h3 class="text-xl font-extrabold text-slate-900 dark:text-white">
+                tNPS Customer Experience Dashboard
+              </h3>
 
-          <p class="text-sm text-slate-600 mt-2 leading-relaxed">
-            Dashboard monitoring Transactional Net Promoter Score (tNPS)
-            untuk layanan Mobile dan IndiHome. Menampilkan trend customer
-            sentiment, complaint experience, purchase experience, serta
-            interaction touchpoint.
-          </p>
+              <p class="text-sm text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                Dashboard monitoring Transactional Net Promoter Score (tNPS)
+                untuk layanan Mobile dan IndiHome. Menampilkan trend customer
+                sentiment, complaint experience, purchase experience, serta
+                interaction touchpoint.
+              </p>
+
+            </div>
+
+            <div class="bg-slate-100 dark:bg-slate-800 px-5 py-3 border-b border-slate-200 dark:border-slate-700 flex justify-between items-center">
+
+              <span class="text-xs font-bold text-slate-700 dark:text-slate-300">
+                Live Interactive Dashboard
+              </span>
+
+              <a
+                target="_blank"
+                href="https://app.powerbi.com/view?r=eyJrIjoiNjc3ODBiNzktZWZmZS00OTcwLWIyOWUtNzkzMTc2M2E2ZjFlIiwidCI6ImZjNzQzMDc1LTkzZWQtNGE1Yy04MmMwLWNhNWVhYzkxNDIyMCIsImMiOjEwfQ%3D%3D"
+                class="text-rose-700 dark:text-rose-400 font-semibold hover:underline">
+                Open Report ↗
+              </a>
+
+            </div>
+
+            <iframe
+              title="tNPS Dashboard"
+              width="100%"
+              height="700"
+              src="https://app.powerbi.com/view?r=eyJrIjoiNjc3ODBiNzktZWZmZS00OTcwLWIyOWUtNzkzMTc2M2E2ZjFlIiwidCI6ImZjNzQzMDc1LTkzZWQtNGE1Yy04MmMwLWNhNWVhYzkxNDIyMCIsImMiOjEwfQ%3D%3D"
+              frameborder="0"
+              allowfullscreen="true">
+            </iframe>
+
+          </article>
+
+
+          <!-- DASHBOARD 2 -->
+          <article class="rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl dark:shadow-none bg-white dark:bg-slate-800/40">
+
+            <div class="p-5 border-b border-slate-100 dark:border-slate-800">
+
+              <div class="flex flex-wrap gap-2 mb-3">
+
+                <span class="px-3 py-1 rounded-full bg-sky-50 text-sky-700 dark:bg-sky-950/70 dark:text-sky-300 text-xs font-bold">
+                  CUSTOMER EXPERIENCE
+                </span>
+
+                <span class="px-3 py-1 rounded-full bg-amber-50 text-amber-700 dark:bg-amber-950/70 dark:text-amber-300 text-xs font-bold">
+                  INTERNAL REPORT
+                </span>
+
+              </div>
+
+              <h3 class="text-xl font-extrabold text-slate-900 dark:text-white">
+                Customer Experience Operational Dashboard
+              </h3>
+
+              <p class="text-sm text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                Dashboard operasional untuk monitoring performa customer
+                experience, tracking KPI regional, analisis issue pelanggan,
+                customer satisfaction, dan reporting bisnis secara real-time.
+              </p>
+
+            </div>
+
+            <div class="bg-slate-100 dark:bg-slate-800 px-5 py-3 border-b border-slate-200 dark:border-slate-700 flex justify-between items-center">
+
+              <span class="text-xs font-bold text-slate-700 dark:text-slate-300">
+                Internal Power BI Report
+              </span>
+
+              <a
+                target="_blank"
+                href="https://app.powerbi.com/reportEmbed?reportId=2c0bd7ee-7052-4ba0-bb9b-47b1ab97e83e&autoAuth=true&ctid=fc743075-93ed-4a5c-82c0-ca5eac914220"
+                class="text-sky-700 dark:text-sky-400 font-semibold hover:underline">
+                Open Report ↗
+              </a>
+
+            </div>
+
+            <iframe
+              title="Customer Experience Dashboard"
+              width="100%"
+              height="700"
+              src="https://app.powerbi.com/reportEmbed?reportId=2c0bd7ee-7052-4ba0-bb9b-47b1ab97e83e&autoAuth=true&ctid=fc743075-93ed-4a5c-82c0-ca5eac914220"
+              frameborder="0"
+              allowfullscreen="true">
+            </iframe>
+
+          </article>
 
         </div>
 
-        <div class="bg-slate-100 px-5 py-3 border-b border-slate-200 flex justify-between items-center">
+      </div>
 
-          <span class="text-xs font-bold text-slate-700">
-            Live Interactive Dashboard
-          </span>
-
-          <a
-            target="_blank"
-            href="https://app.powerbi.com/view?r=eyJrIjoiNjc3ODBiNzktZWZmZS00OTcwLWIyOWUtNzkzMTc2M2E2ZjFlIiwidCI6ImZjNzQzMDc1LTkzZWQtNGE1Yy04MmMwLWNhNWVhYzkxNDIyMCIsImMiOjEwfQ%3D%3D"
-            class="text-rose-700 font-semibold hover:underline">
-            Open Report ↗
-          </a>
-
-        </div>
-
-        <iframe
-          title="tNPS Dashboard"
-          width="100%"
-          height="700"
-          src="https://app.powerbi.com/view?r=eyJrIjoiNjc3ODBiNzktZWZmZS00OTcwLWIyOWUtNzkzMTc2M2E2ZjFlIiwidCI6ImZjNzQzMDc1LTkzZWQtNGE1Yy04MmMwLWNhNWVhYzkxNDIyMCIsImMiOjEwfQ%3D%3D"
-          frameborder="0"
-          allowfullscreen="true">
-        </iframe>
-
-      </article>
-
-
-      <!-- DASHBOARD 2 -->
-      <article class="rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-white">
-
-        <div class="p-5 border-b border-slate-100">
-
-          <div class="flex flex-wrap gap-2 mb-3">
-
-            <span class="px-3 py-1 rounded-full bg-sky-50 text-sky-700 text-xs font-bold">
-              CUSTOMER EXPERIENCE
-            </span>
-
-            <span class="px-3 py-1 rounded-full bg-amber-50 text-amber-700 text-xs font-bold">
-              INTERNAL REPORT
-            </span>
-
-          </div>
-
-          <h3 class="text-xl font-extrabold text-slate-900">
-            Customer Experience Operational Dashboard
-          </h3>
-
-          <p class="text-sm text-slate-600 mt-2 leading-relaxed">
-            Dashboard operasional untuk monitoring performa customer
-            experience, tracking KPI regional, analisis issue pelanggan,
-            customer satisfaction, dan reporting bisnis secara real-time.
-          </p>
-
-        </div>
-
-        <div class="bg-slate-100 px-5 py-3 border-b border-slate-200 flex justify-between items-center">
-
-          <span class="text-xs font-bold text-slate-700">
-            Internal Power BI Report
-          </span>
-
-          <a
-            target="_blank"
-            href="https://app.powerbi.com/reportEmbed?reportId=2c0bd7ee-7052-4ba0-bb9b-47b1ab97e83e&autoAuth=true&ctid=fc743075-93ed-4a5c-82c0-ca5eac914220"
-            class="text-sky-700 font-semibold hover:underline">
-            Open Report ↗
-          </a>
-
-        </div>
-
-        <iframe
-          title="Customer Experience Dashboard"
-          width="100%"
-          height="700"
-          src="https://app.powerbi.com/reportEmbed?reportId=2c0bd7ee-7052-4ba0-bb9b-47b1ab97e83e&autoAuth=true&ctid=fc743075-93ed-4a5c-82c0-ca5eac914220"
-          frameborder="0"
-          allowfullscreen="true">
-        </iframe>
-
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
+    </section>
 
 
     <!-- SKILLS -->
-    <section id="skills" class="section-card p-6 sm:p-9">
+    <section id="skills" class="section-card p-6 sm:p-9 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-colors duration-300">
 
       <div class="eyebrow mb-2">What I bring</div>
 
-      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-7">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-7">
         Professional Skills & Competencies
       </h2>
 
       <div class="grid md:grid-cols-3 gap-5">
 
-        <div class="rounded-2xl bg-rose-50/70 border border-rose-100 p-5">
-          <div class="text-rose-700 text-xs font-extrabold uppercase tracking-wider mb-4">
+        <div class="rounded-2xl bg-rose-50/70 dark:bg-rose-950/30 border border-rose-100 dark:border-rose-900/50 p-5">
+          <div class="text-rose-700 dark:text-rose-400 text-xs font-extrabold uppercase tracking-wider mb-4">
             Business Analysis
           </div>
 
@@ -556,8 +604,8 @@
         </div>
 
 
-        <div class="rounded-2xl bg-sky-50/70 border border-sky-100 p-5">
-          <div class="text-sky-700 text-xs font-extrabold uppercase tracking-wider mb-4">
+        <div class="rounded-2xl bg-sky-50/70 dark:bg-sky-950/30 border border-sky-100 dark:border-sky-900/50 p-5">
+          <div class="text-sky-700 dark:text-sky-400 text-xs font-extrabold uppercase tracking-wider mb-4">
             Quality Assurance
           </div>
 
@@ -571,8 +619,8 @@
         </div>
 
 
-        <div class="rounded-2xl bg-amber-50/70 border border-amber-100 p-5">
-          <div class="text-amber-700 text-xs font-extrabold uppercase tracking-wider mb-4">
+        <div class="rounded-2xl bg-amber-50/70 dark:bg-amber-950/30 border border-amber-100 dark:border-amber-900/50 p-5">
+          <div class="text-amber-700 dark:text-amber-400 text-xs font-extrabold uppercase tracking-wider mb-4">
             Technical & Engineering
           </div>
 
@@ -591,15 +639,46 @@
 
 
   <!-- FOOTER -->
-  <footer class="border-t border-slate-200 bg-white py-8 text-center">
-    <p class="text-xs text-slate-500">
+  <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-8 text-center transition-colors duration-300">
+    <p class="text-xs text-slate-500 dark:text-slate-400">
       © 2026 Albert Rapael Aritonang
       <span class="mx-1 text-rose-400">•</span>
-      <a href="mailto:rafaelart123@gmail.com" class="hover:text-rose-700">
+      <a href="mailto:rafaelart123@gmail.com" class="hover:text-rose-700 dark:hover:text-rose-400">
         rafaelart123@gmail.com
       </a>
     </p>
   </footer>
+
+  <!-- SCRIPT LOGIKA DARK/LIGHT MODE -->
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const themeColorMeta = document.getElementById('theme-color-meta');
+
+    function updateThemeUI() {
+      const isDark = document.documentElement.classList.contains('dark');
+      if (isDark) {
+        lightIcon.classList.remove('hidden');
+        darkIcon.classList.add('hidden');
+        themeColorMeta.setAttribute('content', '#020617'); // slate-950
+      } else {
+        darkIcon.classList.remove('hidden');
+        lightIcon.classList.add('hidden');
+        themeColorMeta.setAttribute('content', '#f8fafc'); // slate-50
+      }
+    }
+
+    // Set icon awal saat halaman dimuat
+    updateThemeUI();
+
+    themeToggleBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      const isDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      updateThemeUI();
+    });
+  </script>
 
 </body>
 </html>
