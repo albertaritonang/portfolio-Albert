@@ -291,18 +291,48 @@
     .skill-ico svg { width: 22px; height: 22px; }
     .skill h3 { font-size: 1.15rem; font-weight: 700; }
 
-    /* ---------- Footer CTA ---------- */
-    .cta {
-      position: relative; overflow: hidden; background: var(--hero); color: #fff; border-radius: 36px;
-      padding: clamp(36px, 7vw, 80px); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 28px;
+    /* ---------- Kontak ---------- */
+    .contact {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: var(--hero); color: var(--hero-ink); border-radius: 36px;
+      border: 1px solid rgba(255,255,255,.08);
+      padding: clamp(32px, 6vw, 72px);
+      display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(28px, 5vw, 56px); align-items: center;
     }
-    .cta::before {
-      content: ""; position: absolute; right: -120px; top: -120px; width: 380px; height: 380px; border-radius: 50%;
-      border: 60px solid var(--red); opacity: .9;
+    .contact-trend { position: absolute; inset: auto 0 0 0; height: 65%; z-index: -1; pointer-events: none; }
+    .contact-trend path { fill: none; stroke: var(--red); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; opacity: .55; }
+    .contact-trend circle { fill: var(--red); }
+    .contact .kicker { color: #FF8A94; }
+    .contact h2 { font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 800; letter-spacing: -.04em; line-height: .98; max-width: 12ch; }
+    .contact-lead { color: var(--hero-muted); margin-top: 18px; max-width: 42ch; }
+    .avail { display: inline-flex; align-items: center; gap: 10px; margin-top: 24px; font-size: 14px; color: #C9D4E2; }
+    .avail .dot { width: 8px; height: 8px; border-radius: 50%; background: #3DDC97; box-shadow: 0 0 0 4px rgba(61,220,151,.18); }
+
+    .contact-list { display: grid; gap: 12px; }
+    .c-item {
+      display: flex; align-items: center; gap: 16px; padding: 18px 20px; border-radius: 20px; text-decoration: none; color: #fff;
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      transition: border-color .2s, background .2s;
     }
-    .cta h2 { position: relative; font-size: clamp(2.2rem, 5.5vw, 4.4rem); font-weight: 800; max-width: 14ch; letter-spacing: -.04em; line-height: .98; }
-    .cta p { position: relative; color: var(--hero-muted); margin-top: 16px; max-width: 42ch; }
-    .cta .hero-cta { position: relative; margin: 0; }
+    a.c-item:hover { border-color: rgba(255,255,255,.4); background: rgba(255,255,255,.09); }
+    .c-ico { flex: none; width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: rgba(255,255,255,.08); color: #fff; }
+    .c-ico svg { width: 20px; height: 20px; }
+    .c-item.primary .c-ico { background: var(--red); }
+    .c-ico.wa { background: #25D366; }
+    .c-text { flex: 1; min-width: 0; }
+    .c-text small { display: block; font-size: 13px; color: var(--hero-muted); }
+    .c-text b { display: block; font: 700 clamp(15px, 1.8vw, 18px) var(--display); overflow-wrap: anywhere; }
+    .c-go { flex: none; width: 18px; height: 18px; color: var(--hero-muted); }
+    .copy-btn {
+      flex: none; appearance: none; cursor: pointer; font: 600 13px var(--body); padding: 9px 14px; border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.25); background: transparent; color: #fff; transition: all .2s;
+    }
+    .copy-btn:hover { border-color: #fff; }
+    .copy-btn.done { background: #3DDC97; border-color: #3DDC97; color: #0F1B2D; }
+
+    @media (max-width: 860px) { .contact { grid-template-columns: 1fr; } }
+    @media (max-width: 560px) { .contact { border-radius: 26px; } .c-item { flex-wrap: wrap; } }
     footer { padding: 28px 0 40px; }
     .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 14px; color: var(--muted); }
     .foot a { color: var(--ink); text-decoration: none; font-weight: 500; }
@@ -380,6 +410,7 @@
         <a href="#cv">CV</a>
         <a href="#travel">Perjalanan Dinas</a>
         <a href="#skills">Skills</a>
+        <a href="#kontak">Kontak</a>
       </nav>
 
       <div class="nav-actions">
@@ -652,15 +683,41 @@
       </div>
     </section>
 
-    <!-- ============ CTA ============ -->
-    <section class="cta" aria-labelledby="cta-title">
+    <!-- ============ KONTAK ============ -->
+    <section class="contact" id="kontak" aria-labelledby="kontak-title">
+      <svg class="contact-trend" viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 270 L110 250 L220 262 L330 215 L440 232 L550 180 L660 196 L770 140 L880 156 L990 100 L1100 112 L1200 70"/>
+        <circle cx="990" cy="100" r="6"/>
+      </svg>
+
       <div>
-        <h2 id="cta-title">Ada data yang perlu dibaca?</h2>
-        <p>Saya terbuka untuk diskusi soal analitik pelanggan, dashboard, dan otomasi data.</p>
+        <div class="kicker">Kontak</div>
+        <h2 id="kontak-title">Mari ngobrol soal data</h2>
+        <p class="contact-lead">Terbuka untuk diskusi analitik pelanggan, dashboard Power BI, otomasi data, maupun peluang kolaborasi.</p>
+        <span class="avail"><span class="dot"></span>Terbuka untuk peluang kerja, freelance, dan kolaborasi</span>
       </div>
-      <div class="hero-cta">
-        <a href="mailto:rafaelart123@gmail.com" class="btn btn-light">Kirim email</a>
-        <a href="https://www.linkedin.com/in/albertaritonang/" target="_blank" rel="noopener" class="btn btn-outline-light">LinkedIn</a>
+
+      <div class="contact-list">
+        <div class="c-item primary">
+          <span class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+          <span class="c-text"><small>Email</small><b>rafaelart123@gmail.com</b></span>
+          <button class="copy-btn" type="button" data-email="rafaelart123@gmail.com">Salin</button>
+        </div>
+        <a class="c-item" href="https://wa.me/6285311807993" target="_blank" rel="noopener">
+          <span class="c-ico wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.05 21.5h-.01a9.4 9.4 0 01-4.8-1.31l-.34-.2-3.57.94.95-3.48-.22-.36a9.43 9.43 0 01-1.44-5.03c0-5.2 4.24-9.44 9.45-9.44 2.52 0 4.89.98 6.67 2.77a9.38 9.38 0 012.76 6.68c0 5.2-4.24 9.43-9.45 9.43zm8.04-17.47A11.3 11.3 0 0012.05.7C5.78.7.68 5.8.68 12.06c0 2 .52 3.96 1.52 5.68L.6 23.5l5.9-1.55a11.33 11.33 0 005.54 1.41h.01c6.26 0 11.36-5.1 11.36-11.36 0-3.03-1.18-5.89-3.32-8.03z"/></svg></span>
+          <span class="c-text"><small>WhatsApp</small><b>+62 853-1180-7993</b></span>
+          <svg class="c-go" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13L13 7M8 7h5v5"/></svg>
+        </a>
+        <a class="c-item" href="https://www.linkedin.com/in/albertaritonang/" target="_blank" rel="noopener">
+          <span class="c-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></span>
+          <span class="c-text"><small>LinkedIn</small><b>in/albertaritonang</b></span>
+          <svg class="c-go" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13L13 7M8 7h5v5"/></svg>
+        </a>
+        <a class="c-item" href="Albert_Rapael_Aritonang_CV.pdf" target="_blank" rel="noopener">
+          <span class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/><path d="M14 3v5h5M12 12v6m0 0l-3-3m3 3l3-3"/></svg></span>
+          <span class="c-text"><small>Curriculum vitae</small><b>Unduh CV (PDF)</b></span>
+          <svg class="c-go" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13L13 7M8 7h5v5"/></svg>
+        </a>
       </div>
     </section>
   </main>
@@ -723,6 +780,17 @@
         });
       });
     })();
+    // Salin email
+    document.querySelectorAll('.copy-btn').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var done = function () {
+          b.textContent = 'Tersalin'; b.classList.add('done');
+          setTimeout(function () { b.textContent = 'Salin'; b.classList.remove('done'); }, 2000);
+        };
+        if (navigator.clipboard) navigator.clipboard.writeText(b.dataset.email).then(done, function () { location.href = 'mailto:' + b.dataset.email; });
+        else location.href = 'mailto:' + b.dataset.email;
+      });
+    });
   </script>
 </body>
 </html>
