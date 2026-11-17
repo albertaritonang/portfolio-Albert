@@ -74,11 +74,11 @@
         </span>
       </a>
 
+      <!-- MENU NAVIGASI YANG SUDAH DISEDERHANAKAN -->
       <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs sm:text-sm font-medium">
         <a href="#cv" class="nav-link">CV</a>
         <a href="#travel" class="nav-link">Perjalanan Dinas</a>
-        <a href="#autopivot" class="nav-link">Auto-Pivot tNPS</a>
-        <a href="#tools" class="nav-link">Cleansing Tool</a>
+        <a href="#projects" class="nav-link font-semibold text-rose-600 dark:text-rose-400">Projects & Tools</a>
         <a href="#featured" class="nav-link">Power BI</a>
         <a href="#skills" class="nav-link">Skills & Tools</a>
 
@@ -252,76 +252,80 @@
     </section>
 
 
-    <!-- NEW SECTION: tNPS AUTO-PIVOT DASHBOARD -->
-    <section id="autopivot" class="section-card p-6 sm:p-9 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-colors duration-300">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div>
-          <div class="eyebrow mb-2">Automated Data Application</div>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
-            tNPS Auto-Pivot Calculator (Mobile & IndiHome)
-          </h2>
+    <!-- PROJECTS & TOOLS SECTION (GABUNGAN AUTO-PIVOT & CLEANSING TOOL) -->
+    <div id="projects" class="space-y-8">
+      
+      <!-- 1. tNPS AUTO-PIVOT CALCULATOR -->
+      <section class="section-card p-6 sm:p-9 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-colors duration-300">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <div class="eyebrow mb-2">Automated Data Application</div>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+              tNPS Auto-Pivot Calculator (Mobile & IndiHome)
+            </h2>
+          </div>
+          <a href="https://tnps-autopivot.vercel.app/"
+            target="_blank"
+            class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-sm font-bold transition shadow-lg shadow-rose-200 dark:shadow-rose-950/50">
+            Buka Live Tool ↗
+          </a>
         </div>
-        <a href="https://tnps-autopivot.vercel.app/"
-          target="_blank"
-          class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-sm font-bold transition shadow-lg shadow-rose-200 dark:shadow-rose-950/50">
-          Buka Live Tool ↗
-        </a>
-      </div>
 
-      <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mt-4 max-w-4xl">
-        Dashboard kalkulator dan rekapitulasi otomatis untuk perhitungan <strong class="text-slate-800 dark:text-white">Transactional Net Promoter Score (tNPS)</strong> segmen Mobile dan IndiHome. Dirancang untuk mempercepat proses kalkulasi metrik kepuasan pelanggan secara instan dan akurat.
-      </p>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mt-4 max-w-4xl">
+          Dashboard kalkulator dan rekapitulasi otomatis untuk perhitungan <strong class="text-slate-800 dark:text-white">Transactional Net Promoter Score (tNPS)</strong> segmen Mobile dan IndiHome. Dirancang untuk mempercepat proses kalkulasi metrik kepuasan pelanggan secara instan dan akurat.
+        </p>
 
-      <div class="grid md:grid-cols-2 gap-6 mt-6">
-        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 space-y-2">
-          <div class="font-bold text-slate-900 dark:text-white text-sm">💡 Fitur Utama & Kegunaan</div>
-          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-            Otomatisasi rekap data survei, eliminasi perhitungan manual, serta penyajian hasil kalkulasi skor tNPS berdasarkan berbagai kategori dan periode waktu.
-          </p>
+        <div class="grid md:grid-cols-2 gap-6 mt-6">
+          <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 space-y-2">
+            <div class="font-bold text-slate-900 dark:text-white text-sm">💡 Fitur Utama & Kegunaan</div>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Otomatisasi rekap data survei, eliminasi perhitungan manual, serta penyajian hasil kalkulasi skor tNPS berdasarkan berbagai kategori dan periode waktu.
+            </p>
+          </div>
+          <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 space-y-2">
+            <div class="font-bold text-slate-900 dark:text-white text-sm">📊 Cakupan Layanan</div>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Mendukung pengolahan data untuk lini layanan utama Telkomsel meliputi segmen Mobile dan IndiHome secara terstruktur.
+            </p>
+          </div>
         </div>
-        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 space-y-2">
-          <div class="font-bold text-slate-900 dark:text-white text-sm">📊 Cakupan Layanan</div>
-          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-            Mendukung pengolahan data untuk lini layanan utama Telkomsel meliputi segmen Mobile dan IndiHome secara terstruktur.
-          </p>
+
+        <div class="flex flex-wrap gap-2 mt-5">
+          <span class="tag text-xs font-semibold px-3 py-1.5 rounded-lg">Auto-Pivot</span>
+          <span class="tag text-xs font-semibold px-3 py-1.5 rounded-lg">tNPS Calculation</span>
+          <span class="tag text-xs font-semibold px-3 py-1.5 rounded-lg">Mobile & IndiHome</span>
+          <span class="tag text-xs font-semibold px-3 py-1.5 rounded-lg">Web Utility</span>
         </div>
-      </div>
+      </section>
 
-      <div class="flex flex-wrap gap-2 mt-5">
-        <span class="tag text-xs font-semibold px-3 py-1.5 rounded-lg">Auto-Pivot</span>
-        <span class="tag text-xs font-semibold px-3 py-1.5 rounded-lg">tNPS Calculation</span>
-        <span class="tag text-xs font-semibold px-3 py-1.5 rounded-lg">Mobile & IndiHome</span>
-        <span class="tag text-xs font-semibold px-3 py-1.5 rounded-lg">Web Utility</span>
-      </div>
-    </section>
-
-
-    <!-- FEATURED TOOL (CLEANSING TOOL) -->
-    <section id="tools" class="section-card p-6 sm:p-9 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-colors duration-300">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div>
-          <div class="eyebrow mb-2">Data Utility Tool</div>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
-            Rekap & Data Cleansing Tool (tNPS)
-          </h2>
+      <!-- 2. CLEANSING TOOL -->
+      <section class="section-card p-6 sm:p-9 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-colors duration-300">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <div class="eyebrow mb-2">Data Utility Tool</div>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+              Rekap & Data Cleansing Tool (tNPS)
+            </h2>
+          </div>
+          <a href="https://rekapin-nps.vercel.app/"
+            target="_blank"
+            class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-sm font-bold transition shadow-lg shadow-rose-200 dark:shadow-rose-950/50">
+            Buka Live Tool ↗
+          </a>
         </div>
-        <a href="https://rekapin-nps.vercel.app/"
-          target="_blank"
-          class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-sm font-bold transition shadow-lg shadow-rose-200 dark:shadow-rose-950/50">
-          Buka Live Tool ↗
-        </a>
-      </div>
 
-      <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mt-4 max-w-4xl">
-        Aplikasi web mandiri yang dikembangkan untuk mengotomatisasi proses pembersihan data (data cleansing) dan rekapitulasi survei kepuasan pelanggan tNPS secara efisien dan akurat.
-      </p>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mt-4 max-w-4xl">
+          Aplikasi web mandiri yang dikembangkan untuk mengotomatisasi proses pembersihan data (data cleansing) dan rekapitulasi survei kepuasan pelanggan tNPS secara efisien dan akurat.
+        </p>
 
-      <div class="flex flex-wrap gap-2 mt-5">
-        <span class="tag text-xs font-semibold px-3 py-1.5 rounded-lg">Data Processing</span>
-        <span class="tag text-xs font-semibold px-3 py-1.5 rounded-lg">Data Cleansing</span>
-        <span class="tag text-xs font-semibold px-3 py-1.5 rounded-lg">Web App</span>
-      </div>
-    </section>
+        <div class="flex flex-wrap gap-2 mt-5">
+          <span class="tag text-xs font-semibold px-3 py-1.5 rounded-lg">Data Processing</span>
+          <span class="tag text-xs font-semibold px-3 py-1.5 rounded-lg">Data Cleansing</span>
+          <span class="tag text-xs font-semibold px-3 py-1.5 rounded-lg">Web App</span>
+        </div>
+      </section>
+
+    </div>
 
 
     <!-- POWER BI DASHBOARD GALLERY -->
